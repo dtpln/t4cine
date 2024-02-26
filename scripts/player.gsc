@@ -1,5 +1,5 @@
 /*
- *      T4Cine
+ *      T4Cine -- DONE
  *      Player-related functions
  */
 
@@ -45,6 +45,5 @@ movementTweaks()
     if(!level.PLAYER_MOVEMENT) return;
 
     setDvar("jump_slowdownEnable", "0");
-    //self maps\mp\perks\_perks::givePerk("specialty_falldamage");
-    //self maps\mp\perks\_perks::givePerk("specialty_marathon");
+    setDvar("setPerk", "longersprint"); // Marathon
 }

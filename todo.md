@@ -1,19 +1,20 @@
 // Misc
-[]    clone - works, just doesnt attach weapon
+[x]    clone -- works, just doesnt attach weapon
 []    givecamo - no camos in t4, maybe something in the future???
-[]    drop 
-[]    about - can create a simple about message thread, but something on the screen would be nice
-[]    clearbodies - works as intended
+[x]    drop 
+[]    about -- can create a simple about message thread, but something on the screen would be nice
+[x]    clearbodies -- works as intended
 []    viewhands
-[]    eb_explosive
-[]    eb_magic
-[]
+[x]    eb_explosive -- works as intended
+[x]    eb_magic
+
 []    spawn_model - can spawn script models, cant spawn anims on said scriptmodels
 []    spawn_fx
-[]    vision
-[]    fog
+[x]    vision -- works as intended
+[x]    fog -- done, but once you set a fog, thats it, cant change it.
+[]      change class
 
-// Bots
+// Bots -- select_ents func is being weird, this whole section will take awhile
 []    bot_spawn
 []    bot_move
 []    bot_aim

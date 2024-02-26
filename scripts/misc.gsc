@@ -98,25 +98,21 @@ expl_bullets()
 
 magc_bullets()
 {
-    /*for(;;)
+    for(;;)
     {
+        player = self;
         self waittill("weapon_fired");
         for ( i = 0; i < level.players.size; i++ )
         {
             if ( inside_fov( self, player, GetDvarInt("eb_magic") ) && player != self )
                 player thread [[level.callbackPlayerDamage]]( self, self, self.health, 8, "MOD_RIFLE_BULLET", self getCurrentWeapon(), (0, 0, 0), (0, 0, 0), "torso_upper", 0 );
         }
-        for ( i = 0; i < level.actors.size; i++ )
-        {
-            if ( inside_fov( self, actor["hitbox"], GetDvarInt("eb_magic") ) )
-                actor["hitbox"] notify( "damage", actor["hitbox"].health, self );
-        }
-    }*/
+    }
 }
 
 viewhands( args )
 {
-    self iPrintLn( "Setting viewmodel to " + level.COMMAND_COLOR + args[0] );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Setting viewmodel to " + level.COMMAND_COLOR + args[0] );
     self setViewmodel( args[0] );
     self.pers["viewmodel"] = args[0];
 }
@@ -137,7 +133,7 @@ reset_models()
 toggle_holding()
 {
     /*level.BOT_WEAPHOLD ^= 1;
-    print( "Holding weapons on death: " + level.COMMAND_COLOR + bool(level.BOT_WEAPHOLD) );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Holding weapons on death: " + level.COMMAND_COLOR + bool(level.BOT_WEAPHOLD) );
 
     if( !level.BOT_WEAPHOLD ) 
     {
@@ -150,7 +146,7 @@ toggle_freeze()
 {
     level.BOT_MOVE ^= 1;
     bots_tweaks();
-    self iPrintLn( "Frozen bots: " + level.COMMAND_COLOR + bool(level.BOT_SPAWN_MOVE) );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Frozen bots: " + level.COMMAND_COLOR + bool(level.BOT_SPAWN_MOVE) );
 }
 
 
@@ -166,7 +162,7 @@ spawn_model( args )
     if( isDefined( anima ) )
         //prop scriptModelPlayAnim(anima);
 
-    self iPrintLn( "Spawned model " + level.COMMAND_COLOR + model );*/
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Spawned model " + level.COMMAND_COLOR + model );*/
 }
 
 spawn_fx( args )
@@ -180,8 +176,8 @@ spawn_fx( args )
 change_vision( args )
 {
     vision = args[0];
-    //self VisionSetNakedForPlayer( vision );
-    self iPrintLn("Vision changed to : " + vision);
+    VisionSetNaked( vision );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Vision changed to : " + level.COMMAND_COLOR + vision);
 }
 
 change_fog( args )
@@ -191,9 +187,10 @@ change_fog( args )
     red         = int(args[2]);
     green       = int(args[3]);
     blue        = int(args[4]);
-    opacity     = int(args[5]);
-    transition  = int(args[6]);
-    setExpFog(start, end, red, green, blue, opacity, transition);
+    transition  = int(args[5]);
+    //SetExpFog( <startDist>, <halfwayDist>, <red>, <green>, <blue>, <transition time> );
+    setExpFog(start, end, red, green, blue, transition);
+    wait 0.5;
 }
 
 
@@ -204,18 +201,23 @@ welcome()
     self waittill( "spawned_player" );
     self freezeControls( false );
     wait 2;
-    //self thread teamPlayerCardSplash( "revived", self, self.pers["team"] );
+    level.prematchPeriodEnd = -1;
+	wait 6;
+	self IPrintLn("Welcome to ^3Sass' Cinematic Mod");
+    self IPrintLn("Ported to WAW by ^3Forgive");
+	self IPrintLn("Type ^3/about 1 ^7for more info");
+	self.donefirst = 1;
 }
 
 about()
 {
-    /*//self _giveWeapon( "killstreak_predator_missile_mp" );
-	//self SwitchToWeapon( "killstreak_predator_missile_mp" );
+    //self giveWeapon( "artillery_mp" );
+	//self SwitchToWeapon( "artillery_mp" );
     //while(self getCurrentWeapon() != "killstreak_predator_missile_mp")
         waitframe();
 
     wait 0.55;
-
+    /*
     //self setBlurForPlayer( 15, 0.5 );
     self VisionSetNakedForPlayer( "mpintro", 0.4 );
 

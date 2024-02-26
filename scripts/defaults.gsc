@@ -7,6 +7,7 @@ load_defaults()
 {
     level.COMMAND_PREFIX            = "mvm";    // "text" - Prefix of the commands. Can be blank ("") to disable globally. You can disable it per-command in the scripts/commands.gsc file
     level.COMMAND_COLOR             = "^3";     // "^#" - q3 color code for the commands' descriptions and killfeed messages. Can be blank ("") to disable globally.
+    level.HIGHLIGHT_COLOR           = "^1";     // "^#" - q3 color code for the highlighted text in the output messages that are sent when a command is inputted.
 
     level.MATCH_UNLIMITED_TIME      = true;     // [true/false] - Unlimited time
     level.MATCH_UNLIMITED_SCORE     = true;     // [true/false] - Unlimited score

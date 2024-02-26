@@ -17,7 +17,7 @@ add( args )
 
     ent = addTestClient();
     ent persistence();
-    ent spawnme(self, weapon, team, camo);
+    ent spawnme(self, weapon, team);
 
     create_kill_params();
 }
@@ -45,9 +45,6 @@ spawnme( owner, weapon, team, camo )
         self notify( "menuresponse", game["menu_team"], level.otherTeam[level.players[0].team] );
         camo = team;
     }
-
-    //if ( !isdefined( camo ) || !isValidCamo( camo ) )
-        //camo = 0;
 
     skipframe();
 

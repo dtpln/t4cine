@@ -10,7 +10,6 @@ init()
     //precache::custom_precache();
     //precache::fx_precache();
 
-    //level.actors = [];
     level thread waitForHost();
 }
 
@@ -26,7 +25,6 @@ waitForHost()
     scripts\utils::hud_tweaks();
     scripts\utils::score_tweaks();
     scripts\utils::bots_tweaks();
-    //scripts\actors::prepare_gopro(); // No actors in WAW
 
     player thread scripts\misc::welcome();
     player thread scripts\ui::await();
@@ -39,7 +37,6 @@ onPlayerSpawned()
     self endon("disconnect");
 
     self scripts\player::playerRegenAmmo();
-    //self thread scripts\actors::names();
     self thread scripts\misc::class_swap();
 
     for(;;)
