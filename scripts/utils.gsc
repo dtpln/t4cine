@@ -15,7 +15,7 @@ waitframe()
 skipframe()
 { waittillframeend; }
 
-//pront( string ) // s/o simon for engraving "iProntLn" in my mind forever; this one is for you
+//print( string ) // Removed "pront", sorry sass
 //{ for ( i = 0; i < level.players.size; i++ ) player iPrintLn( string );  }
 
 true_or_undef( cond )

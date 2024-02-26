@@ -50,14 +50,14 @@ class_swap()
     {
         if ( isValidOffhand( weapon ) )
         {
-            pront( "Changing tactical to " + level.COMMAND_COLOR + weapon );
+            print( "Changing tactical to " + level.COMMAND_COLOR + weapon );
             self take_offhands_tac();
             waitsec();
             self setOffhandSecondaryClass( get_offhand_name( weapon ) );
         }
         else 
         {
-            pront( "Changing lethal to " + level.COMMAND_COLOR + weapon );
+            print( "Changing lethal to " + level.COMMAND_COLOR + weapon );
             self take_offhands_leth();
             waitsec();
             self SetOffhandPrimaryClass( get_offhand_name( weapon ) );
@@ -74,7 +74,7 @@ class_swap()
 
         self switchToWeapon( weapon );
     }
-    else pront( "wtf is a '" + weapon  + "'??");
+    else print( "wtf is a '" + weapon  + "'??");
 }*/
 
 clear_bodies()
@@ -137,7 +137,7 @@ reset_models()
 toggle_holding()
 {
     /*level.BOT_WEAPHOLD ^= 1;
-    pront( "Holding weapons on death: " + level.COMMAND_COLOR + bool(level.BOT_WEAPHOLD) );
+    print( "Holding weapons on death: " + level.COMMAND_COLOR + bool(level.BOT_WEAPHOLD) );
 
     if( !level.BOT_WEAPHOLD ) 
     {

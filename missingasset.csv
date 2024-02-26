@@ -1,1 +1,17 @@
 menufile,ui_mp/patch_menus.txt
+menufile,ui_mp/patch_menus.txt
+xanim,p_makinraid_hatch
+xanim,crew_sherman_passenger9_combatidle_player
+xanim,crew_sherman_passenger8_combatidle_player
+xanim,crew_lvt4_peleliu1_character9_player
+xanim,crew_lvt4_peleliu1_character5_player
+xanim,crew_lvt4_peleliu1_character4_player
+xanim,p_flak1_tag2_idle
+menufile,ui_mp/patch_menus.txt
+xanim,p_makinraid_hatch
+xanim,crew_sherman_passenger9_combatidle_player
+xanim,crew_sherman_passenger8_combatidle_player
+xanim,crew_lvt4_peleliu1_character9_player
+xanim,crew_lvt4_peleliu1_character5_player
+xanim,crew_lvt4_peleliu1_character4_player
+xanim,p_flak1_tag2_idle
