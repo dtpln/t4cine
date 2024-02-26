@@ -1,5 +1,5 @@
 /*
- *      IW4cine
+ *      T4Cine
  *      Bots functions
  */
 

@@ -102,6 +102,7 @@ init()
 
 	// Loading all my shit here
 	thread scripts\start::init();
+	thread scripts\defaults::load_defaults();
 	
 	level thread onPlayerConnect();
 }

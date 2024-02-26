@@ -1,5 +1,5 @@
 /*
- *      IW4 Cine
+ *      T4Cine
  *      Player-related functions
  */
 

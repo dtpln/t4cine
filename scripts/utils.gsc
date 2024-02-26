@@ -1,5 +1,5 @@
 /*
- *      IW4cine
+ *      T4Cine
  *      Utilities
  */
 
@@ -8,8 +8,10 @@
 // Macros
 waitsec()
 { wait 1; }
+
 waitframe()
-{ wait .1; }
+{ wait .05; }
+
 skipframe()
 { waittillframeend; }
 

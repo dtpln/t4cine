@@ -1,5 +1,5 @@
 /*
- *      IW4cine
+ *      T4Cine
  *      !> Credits to the CoDTVMM Team, I merely made it easier on the eyes
  */
 
