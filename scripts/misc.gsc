@@ -50,14 +50,14 @@ class_swap()
     {
         if ( isValidOffhand( weapon ) )
         {
-            print( "Changing tactical to " + level.COMMAND_COLOR + weapon );
+            print( "Changing tactical to " + weapon );
             self take_offhands_tac();
             waitsec();
             self setOffhandSecondaryClass( get_offhand_name( weapon ) );
         }
         else 
         {
-            print( "Changing lethal to " + level.COMMAND_COLOR + weapon );
+            print( "Changing lethal to " + weapon );
             self take_offhands_leth();
             waitsec();
             self SetOffhandPrimaryClass( get_offhand_name( weapon ) );
@@ -112,7 +112,7 @@ magc_bullets()
 
 viewhands( args )
 {
-    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Setting viewmodel to " + level.COMMAND_COLOR + args[0] );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Setting viewmodel to " + args[0] );
     self setViewmodel( args[0] );
     self.pers["viewmodel"] = args[0];
 }
@@ -133,7 +133,7 @@ reset_models()
 toggle_holding()
 {
     /*level.BOT_WEAPHOLD ^= 1;
-    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Holding weapons on death: " + level.COMMAND_COLOR + bool(level.BOT_WEAPHOLD) );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Holding weapons on death: " + bool(level.BOT_WEAPHOLD) );
 
     if( !level.BOT_WEAPHOLD ) 
     {
@@ -146,7 +146,7 @@ toggle_freeze()
 {
     level.BOT_MOVE ^= 1;
     bots_tweaks();
-    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Frozen bots: " + level.COMMAND_COLOR + bool(level.BOT_SPAWN_MOVE) );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Frozen bots: " + bool(level.BOT_SPAWN_MOVE) );
 }
 
 
@@ -162,7 +162,7 @@ spawn_model( args )
     if( isDefined( anima ) )
         //prop scriptModelPlayAnim(anima);
 
-    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Spawned model " + level.COMMAND_COLOR + model );*/
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Spawned model " + model );*/
 }
 
 spawn_fx( args )
@@ -177,7 +177,7 @@ change_vision( args )
 {
     vision = args[0];
     VisionSetNaked( vision );
-    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Vision changed to : " + level.COMMAND_COLOR + vision);
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Vision changed to : " + vision);
 }
 
 change_fog( args )
@@ -197,14 +197,11 @@ change_fog( args )
 welcome()
 {
     self endon( "disconnect" );
-
-    self waittill( "spawned_player" );
+    level waittill("prematch_over");
     self freezeControls( false );
-    wait 2;
     level.prematchPeriodEnd = -1;
-	wait 6;
 	self IPrintLn("Welcome to ^3Sass' Cinematic Mod");
-    self IPrintLn("Ported to WAW by ^3Forgive");
+    self IPrintLn("Ported to WAW by ^3Forgive & Antiga");
 	self IPrintLn("Type ^3/about 1 ^7for more info");
 	self.donefirst = 1;
 }

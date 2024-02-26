@@ -5,10 +5,15 @@
 
 init()
 {
-    scripts\defaults::load_defaults();
+    thread scripts\defaults::load_defaults();
     //precache::common_precache();
     //precache::custom_precache();
     //precache::fx_precache();
+    thread scripts\utils::match_tweaks();
+    thread scripts\utils::lod_tweaks();
+    thread scripts\utils::hud_tweaks();
+    thread scripts\utils::score_tweaks();
+    thread scripts\utils::bots_tweaks();
 
     level thread waitForHost();
 }
@@ -17,14 +22,7 @@ waitForHost()
 {
     level waittill( "connecting", player );
 
-    player scripts\commands::registerCommands();
-
-    scripts\utils::skip_prematch();
-    scripts\utils::match_tweaks();
-    scripts\utils::lod_tweaks();
-    scripts\utils::hud_tweaks();
-    scripts\utils::score_tweaks();
-    scripts\utils::bots_tweaks();
+    player thread scripts\commands::registerCommands();
 
     player thread scripts\misc::welcome();
     player thread scripts\ui::await();
@@ -37,7 +35,7 @@ onPlayerSpawned()
     self endon("disconnect");
 
     self scripts\player::playerRegenAmmo();
-    self thread scripts\misc::class_swap();
+    //self thread scripts\misc::class_swap(); - this caused your loading issue frank - need to replace it properly - which ill provide tomorrow :)
 
     for(;;)
     {

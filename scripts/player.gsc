@@ -19,10 +19,8 @@ regenAmmo()
     self endon("disconnect");
     for (;;)
     {
-        //self notifyOnPlayerCommand( "reload", "+reload" );
         self waittill( "reload" );
         wait 2;
-
         self giveMaxAmmo( self getCurrentWeapon() );
     }
 }

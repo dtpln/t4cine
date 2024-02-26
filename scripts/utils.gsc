@@ -143,15 +143,6 @@ is_akimbo( weapon )
     return false;
 }
 
-
-// QOL stuff
-skip_prematch()
-{
-    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "waiting_for_teams", 0 );
-    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "match_starting_in", 0 );
-    level.prematchPeriodEnd = -1;
-}
-
 lod_tweaks()
 {
     if(!level.VISUAL_LOD) return;
@@ -162,12 +153,12 @@ lod_tweaks()
 
 hud_tweaks()
 {
-    setDvar("sv_hostname", "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive");
+    setDvar("sv_hostname", "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive & Antiga");
     setDvar("g_TeamName_Allies",    "allies");
     setDvar("g_TeamName_Axis",      "axis");
     setDvar("scr_gameEnded",        !level.VISUAL_HUD);
 
-    game["strings"]["change_class"] = " ";
+    game["strings"]["change_class"] = undefined;
 }
 
 match_tweaks()
