@@ -1,6 +1,6 @@
 /*
  *      IW4cine
- *      Miscellaneous functions
+ *      Miscellaneous functionsssssssssss
  */
 
 #include maps\mp\_utility;
