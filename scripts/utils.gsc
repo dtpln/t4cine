@@ -232,13 +232,13 @@ is_bot()
     return ( ( isDefined( self.pers["isBot"] ) && self.pers["isBot"] ) || isSubStr( self getguid() + "", "bot" ) );
 }
 
-foreach_bot( arg, arg_two )
+foreach_bot( arg, arg_two, arg_val )
 {
     player = level.players;
     for(i=0;i<player.size;i++)
     {
         if(player[i] is_bot() && arg_two == 1)
-            player[i] [[arg]]( arg_two );
+            player[i] [[arg]]( arg_val );
         else if(player[i] is_bot() && arg_two == 0)
             player[i] [[arg]]();
     }
