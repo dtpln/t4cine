@@ -238,9 +238,9 @@ foreach_bot( arg, arg_two )
     for(i=0;i<player.size;i++)
     {
         if(player[i] is_bot() && arg_two == 1)
-            player thread [[arg]]( arg_two );
+            player[i] [[arg]]( arg_two );
         else if(player[i] is_bot() && arg_two == 0)
-            player thread [[arg]];
+            player[i] [[arg]]();
     }
 }
 
