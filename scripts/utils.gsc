@@ -223,7 +223,6 @@ score_tweaks()
     }
 }
 
-
 // Player & Bots manipulation
 is_bot()
 {
@@ -231,6 +230,18 @@ is_bot()
     assert( isPlayer( self ) );
 
     return ( ( isDefined( self.pers["isBot"] ) && self.pers["isBot"] ) || isSubStr( self getguid() + "", "bot" ) );
+}
+
+foreach_bot( arg, arg_two )
+{
+    player = level.players;
+    for(i=0;i<player.size;i++)
+    {
+        if(player[i] is_bot() && arg_two == 1)
+            player thread [[arg]]( arg_two );
+        else if(player[i] is_bot() && arg_two == 0)
+            player thread [[arg]];
+    }
 }
 
 at_crosshair( ent )
