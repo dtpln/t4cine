@@ -82,43 +82,6 @@ fake_killfeed_icon( weapon )
     }
 }
 
-// The mod used to use premade "weapon names" for bots spawns (ew), but now it's using actual weapon names
-// Let's handle the old ones still, because I can already hear people losing their god damned mind after all this time
-// Can also be used to make "shortcuts" if you're lazy like me hehe
-legacy_classnames( weapon )
-{
-    switch ( weapon )
-    {
-        case "inter":
-        case "intervention":
-        case "cheytac":
-            return "cheytac_mp";
-        case "barrett":
-        case "50":
-            return "barrett_mp";
-        case "deagle":
-        case "deag":
-            return "deserteagle_mp";
-        case "aug":
-            return "aug_mp";
-        case "uzi":
-            return "uzi_mp";
-        case "riot":
-            return "riotshield_mp";
-        case "mp5":
-            return "mp5k_mp";
-        case "ump":
-            return "ump45_mp";
-        case "m4":
-            return "m4_mp";
-        case "ak47":
-        case "ak":
-            return "ak47_mp";
-        default:
-            return weapon;
-    }
-}
-
 take_offhands_tac()
 {
     self takeweapon( "smoke_grenade_mp" );

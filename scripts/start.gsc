@@ -22,11 +22,18 @@ waitForHost()
 {
     level waittill( "connecting", player );
 
-    player thread scripts\commands::registerCommands();
+    /*
+        Bot Check To Ensure They Do Not Run Un-Needed Threads
+    */
 
-    player thread scripts\misc::welcome();
-    player thread scripts\ui::await();
-    player thread onPlayerSpawned();
+    if(!player scripts\utils::is_bot())
+    {
+        player thread scripts\commands::registerCommands();
+
+        player thread scripts\misc::welcome();
+        player thread scripts\ui::await();
+        player thread onPlayerSpawned();
+    }
 }
 
 

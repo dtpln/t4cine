@@ -26,8 +26,4 @@ load_defaults()
     
     level.VISUAL_LOD                = true;     // [true/false] - Increase LOD distances. MIGHT MAKE YOUR WEAPON FLICKER ON SOME MAPS!!!!
     level.VISUAL_HUD                = false;    // [true/false] - When false, hides the weaponbar/scorebar/minimap; Uses the scr_gameEnded dvar.
-
-    level.ACTOR_NAME_PREFIX         = "actor";  // "text" - Actors' default name (e.g. "Guy" will result in "Guy1", "Guy2", etc)
-    level.ACTOR_SHOW_NAMES          = false;     // [true/false] - Toggles names being displayed when looking at an actor
-    level.ACTOR_SHOW_KILLFEED       = false;     // [true/false] - Creates fake killfeed when killing an actor. Only works with IW4x versions that has "emojis" support.
 }

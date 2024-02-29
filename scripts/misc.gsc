@@ -15,8 +15,6 @@ clone()
 
 drop()
 {
-    self endon( "disconnect" );
-    self endon( "death" );
     self dropItem( self getCurrentWeapon() );
 }
 

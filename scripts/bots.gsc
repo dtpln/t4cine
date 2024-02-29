@@ -11,11 +11,10 @@
 
 add( args )
 {
-    weapon  = args[0];
-    team    = args[1];
-    camo    = args[2];
-
-    ent = addTestClient();
+    weapon = args[0];
+    team = args[1];
+    
+    ent = addtestclient();
     ent persistence();
     ent spawnme(self, weapon, team);
 
@@ -29,26 +28,21 @@ persistence()
     self.pers["fakeModel"]  = false;    // has the bot's model been changed?
 }
 
-spawnme( owner, weapon, team, camo )
+spawnme( owner, weapon, team )
 {
     while ( !isdefined( self.pers["team"] ) ) skipframe();
 
-    weapon = legacy_classnames( weapon );
-    //if( !isValidPrimary( getBaseWeaponName( weapon ) ) && !isValidSecondary( getBaseWeaponName( weapon ) ) )
-            //weapon = "ak47_mp";
-
     if ( ( team == "allies" || team == "axis" ) && isdefined( team ) )
-            self notify( "menuresponse", game["menu_team"], team );
+        self notify( "menuresponse", game["menu_team"], team );
     else if ( !isdefined( team ) )
         self notify( "menuresponse", game["menu_team"], level.otherTeam[level.players[0].team] ); // level.players[0] might fuck up in round-based modes, I'll see
-    else {
+    else
         self notify( "menuresponse", game["menu_team"], level.otherTeam[level.players[0].team] );
-        camo = team;
-    }
 
     skipframe();
 
-    self notify( "menuresponse", "changeclass", "class0" );
+    self notify("menuresponse","changeclass","sniper_mp");
+
     loadout = create_loadout( weapon );
     self thread create_spawn_thread( scripts\bots::give_loadout_on_spawn, loadout );
     self thread create_spawn_thread( scripts\bots::attach_weapons, loadout );
@@ -186,7 +180,7 @@ delay(args)
 
 create_loadout( weapon )
 {
-    loadout         = spawnstruct();
+    loadout = spawnstruct();
     loadout.primary = weapon;
     return loadout;
 }
@@ -211,14 +205,11 @@ create_kill_params()
     level.killparams["body"]     = "flesh_body:j_spine4:body";
     level.killparams["head"]     = "flesh_head:j_head:head";
     level.killparams["shotgun"]  = "flesh_body:j_knee_ri:body"; // REDO ME!!
-    level.killparams["cash"]     = "money:j_spine4:body";
 }
 
 give_loadout_on_spawn( loadout )
 {
     self takeAllWeapons();
-    self giveWeapon( loadout.primary, is_akimbo( loadout.primary ) );
+    self giveWeapon( loadout.primary );
     self setSpawnWeapon( loadout.primary );
-    self detachAll();
-    //self maps\mp\gametypes\_teams::playerModelForWeapon( getBaseWeaponName( loadout.primary ) , "usp" );
 }
