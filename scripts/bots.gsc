@@ -65,7 +65,8 @@ move( args )
     name = args[0];
     for ( i = 0; i < level.players.size; i++ )
     {
-        player = level.players;
+        player = level.players; //  this line fixes all if ( select_ents lines, but throws an error.
+                                //  probably a better way of doing this...
         if ( select_ents( player, name, self ) ) {
             player setOrigin( at_crosshair( self ) );
             player save_spawn();
