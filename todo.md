@@ -1,10 +1,10 @@
 // Misc
 [x]    clone -- works, just doesnt attach weapon
-[]    givecamo - no camos in t4, maybe something in the future???
+[-]    givecamo - no camos in t4, maybe something in the future???
 [x]    drop 
 []    about -- can create a simple about message thread, but something on the screen would be nice
 [x]    clearbodies -- works as intended
-[]    viewhands
+[x]    viewhands -- works as intended
 [x]    eb_explosive -- works as intended
 [x]    eb_magic
 

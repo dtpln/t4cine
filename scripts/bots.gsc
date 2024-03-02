@@ -65,10 +65,11 @@ move( args )
     name = args[0];
     for ( i = 0; i < level.players.size; i++ )
     {
-        /*if ( select_ents( player, name, self ) ) {
+        player = level.players;
+        if ( select_ents( player, name, self ) ) {
             player setOrigin( at_crosshair( self ) );
             player save_spawn();
-        }*/
+        }
     }
 }
 
@@ -107,7 +108,8 @@ model( args )
     team  = args[2];
     for ( i = 0; i < level.players.size; i++ )
     {
-        /*if ( select_ents( player, name, self ) ) 
+        player = level.players[i];
+        if ( select_ents( player, name, self ) ) 
         {
             player.pers["fakeTeam"]  = team;
             player.pers["fakeModel"] = model;
@@ -118,7 +120,7 @@ model( args )
 
             if( isdefined ( player.pers["viewmodel"] ) )
                 player setViewmodel( player.pers["viewmodel"] );
-        }*/
+        }
     }
 }
 
@@ -156,17 +158,18 @@ kill( args )
     mode = args[1];
     for ( i = 0; i < level.players.size; i++ )
     {
-        /*if ( select_ents( player, name, self ) )
+        player = level.players[i];
+        if ( select_ents( player, name, self ) )
         {
             parameters  = strTok( level.killparams[mode], ":" );
             fx          = parameters[0];
             tag         = player getTagOrigin( parameters[1] );
             hitloc      = parameters[2];
 
-            playFXOnTag( getFX( fx ), self, tag );
+            //playFXOnTag( getFX( fx ), self, tag );
             player thread [[level.callbackPlayerDamage]]( player, player, player.health, 8, "MOD_SUICIDE", self getCurrentWeapon(), tag, tag, hitloc, 0 );
             
-        }*/
+        }
     }
 }
 
