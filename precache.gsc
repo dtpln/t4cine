@@ -1,14 +1,14 @@
 /*
- *      IW4 Cine
+ *      T4Cine
  *      Precache
  *      
  *      >>>  IMPORTANT :
- *      - EVERY animation needs to be precached
+ *      - --EVERY animation needs to be precached-- // No anims in T4 unless building item. Useless anyway since you cant spawn models with anims. -4g
  *      - Multiplayer playermodels don't need to be precached, but Singleplayer ones do
  *
  *      >>>  WHERE TO FIND :
- *      List of MP models : https://pastebin.com/raw/0a53Npp8
- *      List of MP anims : https://pastebin.com/raw/KGbrSCdx
+ *      List of MP models : 
+ *      List of MP anims : 
  *
  *      >>>  HOW TO USE :
  *      Put your precache between the "{ }" brackets below custom_precache()
@@ -35,8 +35,6 @@ common_precache()
     precacheModel( "projectile_semtex_grenade_bombsquad" );
     precacheModel( "tag_origin" );
     precacheModel( "com_plasticcase_enemy" );
-    precacheMPAnim( "pb_stand_remotecontroller" );
-    precacheMPAnim( "pb_stand_death_chest_blowback" );
 }
 
 fx_precache()
