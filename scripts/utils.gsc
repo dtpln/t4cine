@@ -135,7 +135,7 @@ match_tweaks()
     }
 }
 
-bots_tweaks()
+bots_tweaks() //    Useless in games that lack these dvars by default. -4g
 {
     setDvar( "testclients_doMove",      level.BOT_MOVE );
     setDvar( "testclients_doAttack",    level.BOT_MOVE );
@@ -143,7 +143,7 @@ bots_tweaks()
     setDvar( "testclients_watchKillcam", 1 );
 }
 
-// TEST ME
+
 score_tweaks()
 {
     maps\mp\gametypes\_rank::registerScoreInfo( "kill",  level.MATCH_KILL_SCORE );

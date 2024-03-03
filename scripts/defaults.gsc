@@ -11,7 +11,7 @@ load_defaults()
 
     level.MATCH_UNLIMITED_TIME      = true;     // [true/false] - Unlimited time
     level.MATCH_UNLIMITED_SCORE     = true;     // [true/false] - Unlimited score
-    level.MATCH_KILL_SCORE          = 100;      // integer - The default score per kill
+    level.MATCH_KILL_SCORE          = 5;      // integer - The default score per kill
     level.MATCH_KILL_BONUS          = false;    // [true/false] - Whether or not to give bonuses (headshot, longshot, etc.) for kills
 
     level.BOT_KILLCAMTIME           = 3;        // integer - Total time of the killcam in seconds, to control respawn delay (0 = instant respawn, -1 = reset killcam behavior)
@@ -26,4 +26,7 @@ load_defaults()
     
     level.VISUAL_LOD                = true;     // [true/false] - Increase LOD distances. MIGHT MAKE YOUR WEAPON FLICKER ON SOME MAPS!!!!
     level.VISUAL_HUD                = false;    // [true/false] - When false, hides the weaponbar/scorebar/minimap; Uses the scr_gameEnded dvar.
+
+    //  Added features -4g
+    level.BOT_WARFARE               = false;    // [true/false] - When true, enables bot warfare. // BW DOESNT WORK ON STEAM, MAYBE IMPLEMENT ON PLUTONIUM? -4g
 }

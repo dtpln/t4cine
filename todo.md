@@ -1,12 +1,13 @@
 // Misc
-[x]    clone -- works, just doesnt attach weapon
-[-]    givecamo - no camos in t4, maybe something in the future???
-[x]    drop 
-[]    about -- can create a simple about message thread, but something on the screen would be nice
-[x]    clearbodies -- works as intended
-[x]    viewhands -- works as intended
-[x]    eb_explosive -- works as intended
-[x]    eb_magic
+[x]     clone -- works, just doesnt attach weapon
+[-]     givecamo - no camos in t4, maybe something in the future???
+[x]     drop 
+[]      about -- can create a simple about message thread, but something on the screen would be nice
+[x]     clearbodies -- works as intended
+[x]     viewhands -- works as intended
+[x]     eb_explosive -- works as intended
+[x]     eb_magic
+[x]     score -- works as intended
 
 []    spawn_model - can spawn script models, cant spawn anims on said scriptmodels
 []    spawn_fx
@@ -15,14 +16,14 @@
 []      change class
 
 // Bots -- select_ents func is being weird, this whole section will take awhile
-[]    bot_spawn
-[]    bot_move
-[]    bot_aim
-[]    bot_stare
-[]    bot_model
-[]    bot_kill
-[]    bot_holdgun
-[]    bot_freeze
+[x]    bot_spawn
+[x]    bot_move
+[x]    bot_aim
+[x]    bot_stare
+[x]    bot_model
+[x]    bot_kill
+[x]    bot_holdgun
+[x]    bot_freeze
 
 Updates 2.26.24 - 12AM
     - Antiga
@@ -35,3 +36,24 @@ Updates 2.26.24 - 12AM
 - Added .gitignore and made sure certain items weren't part of the project.
 - Fixed loading lag/delay even with developer 2 enabled.
 - Added some comments around code :D.
+
+Updates 3.2.24 - 9PM
+    - 4g
+- Fixed bot functions by adding "for ( i = 0; i < level.players.size; i++ )"
+    - Probably a better way to do this in the future.
+- Added a default to implement bot warfare for plutonium in the future.
+- REM maths.gsc
+- Started writing an about message, might dump for old one.
+- Enabled precache.
+- Verified viewmodel and score functions work.
+- REM:
+    - utils::camo_int // No camos in T4.
+
+- Need to fix:
+    - misc::class_swap // Broken atm.
+    - misc::toggle_holding // Gotta do sum with this at some point.
+    - misc::change_fog // Currently broken. Works, but cant change to another once one is set.
+    - misc::about // Got close to what I wanted but not perfect... Text doesnt disappear on weapon change.
+
+- 
+    - utils::hud_tweaks // gTeamName dvars dont set.

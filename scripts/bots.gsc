@@ -65,8 +65,8 @@ move( args )
     name = args[0];
     for ( i = 0; i < level.players.size; i++ )
     {
-        player = level.players; //  this line fixes all if ( select_ents lines, but throws an error.
-                                //  probably a better way of doing this...
+        player = level.players[i];  //  this line fixes all if ( select_ents lines, but throws an error.
+                                    //  probably a better way of doing this... -4g
         if ( select_ents( player, name, self ) ) {
             player setOrigin( at_crosshair( self ) );
             player save_spawn();
@@ -79,12 +79,13 @@ aim( args )
     name = args[0];
     for ( i = 0; i < level.players.size; i++ )
     {
-        /*if ( select_ents( player, name, self ) ) 
+        player = level.players[i];
+        if ( select_ents( player, name, self ) ) 
         {
             player thread doaim();
             wait 0.5;
             player notify( "stopaim" );
-        }*/
+        }
     }
 }
 
@@ -93,12 +94,13 @@ stare( args )
     name = args[0];
     for ( i = 0; i < level.players.size; i++ )
     {
-        /*if ( select_ents( player, name, self ) ) 
+        player = level.players[i];
+        if ( select_ents( player, name, self ) ) 
         {
             player.pers["isStaring"] ^= 1;
             if ( player.pers["isStaring"] ) player thread doaim();
             else player notify( "stopaim" );
-        }*/
+        }
     }
 }
 
@@ -132,7 +134,7 @@ doaim()
 
     for (;;)
     {
-        wait .05;   // waittillframeend makes the loop too fast (?) and the game yeets itself off the mortal plane from whence it came
+        wait .05;   // waittillframeend makes the loop too fast (?) and the game yeets itself off the mortal plane from whence it came - Sass
         target = undefined;
 
         for ( i = 0; i < level.players.size; i++ )

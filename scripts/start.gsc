@@ -6,9 +6,9 @@
 init()
 {
     thread scripts\defaults::load_defaults();
-    //precache::common_precache();
-    //precache::custom_precache();
-    //precache::fx_precache();
+    precache::common_precache();
+    precache::custom_precache();
+    precache::fx_precache();
     thread scripts\utils::match_tweaks();
     thread scripts\utils::lod_tweaks();
     thread scripts\utils::hud_tweaks();

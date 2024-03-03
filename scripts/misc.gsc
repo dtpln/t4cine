@@ -2,7 +2,6 @@
  *      T4Cine
  *      Miscellaneous functions
  */
-
 #include maps\mp\_utility;
 #include common_scripts\utility;
 #include scripts\utils;
@@ -42,8 +41,6 @@ class_swap()
 /*give( args )
 {
     weapon  = args[0];
-    camo    = defaultcase( isDefined( args[1] ), args[1], 0 );
-
     if ( isValidEquipment( weapon ) )
     {
         if ( isValidOffhand( weapon ) )
@@ -68,7 +65,7 @@ class_swap()
         self dropItem( self getCurrentWeapon() );
         skipframe();
 
-        self giveWeapon( weapon, camo_int( camo ), is_akimbo( weapon ) );
+        self giveWeapon( weapon );
 
         self switchToWeapon( weapon );
     }
@@ -128,7 +125,7 @@ reset_models()
 }
 
 // Toggles
-toggle_holding()
+toggle_holding() //     Gotta do sum with this at some point. -4g
 {
     /*level.BOT_WEAPHOLD ^= 1;
     self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Holding weapons on death: " + bool(level.BOT_WEAPHOLD) );
@@ -149,18 +146,14 @@ toggle_freeze()
 
 
 // Spawners
-spawn_model( args )
+spawn_model( args ) // Kinda useless, but decided to keep in. Spawn some trees or something. -4g
 {
-    /*model = args[0];
-    anima = args[1];
+    model = args[0];
     prop = spawn( "script_model", self.origin );
     prop.angles = ( 0, self.angles[1], 0);
     prop setModel( model );
 
-    if( isDefined( anima ) )
-        //prop scriptModelPlayAnim(anima);
-
-    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Spawned model " + model );*/
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Spawned model " + model );
 }
 
 spawn_fx( args )
@@ -178,7 +171,7 @@ change_vision( args )
     self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Vision changed to : " + vision);
 }
 
-change_fog( args )
+change_fog( args ) // Currently broken. Works, but cant change to another once one is set. -4g
 {
     start       = int(args[0]);
     end         = int(args[1]);
@@ -191,7 +184,7 @@ change_fog( args )
     wait 0.5;
 }
 
-
+// Text and Messages
 welcome()
 {
     self endon( "disconnect" );
@@ -204,38 +197,33 @@ welcome()
 	self.donefirst = 1;
 }
 
-about()
+about() // Experimental, got close to what I wanted but not perfect... Text doesnt disappear on weapon change. -4g
 {
-    //self giveWeapon( "artillery_mp" );
-	//self SwitchToWeapon( "artillery_mp" );
-    //while(self getCurrentWeapon() != "killstreak_predator_missile_mp")
+    lastWeapon = self getCurrentWeapon();
+    self giveWeapon( "dog_bite_mp" );
+	self SwitchToWeapon( "dog_bite_mp" );
+    while(self getCurrentWeapon() != "dog_bite_mp")
         waitframe();
 
     wait 0.55;
-    /*
-    //self setBlurForPlayer( 15, 0.5 );
-    self VisionSetNakedForPlayer( "mpintro", 0.4 );
+
+    VisionSetNaked( "mpintro", 0.4 );
 
     text = [];
-    text[0] = elem( -50, 0.8, "hudbig",     "^3IW4cine - #400", 30);
-    text[1] = elem( -33, 1,   "default",    "2015 - 2023", 30 );
-    text[2] = elem( -9,  1.1, "small",      "^3Immensely and forever thankful for :", 20 );
-    text[3] = elem( 7.5, 1.3, "default",    "Zura, luckyy, CoDTV MM Team, kruumy", 15 );
-    text[4] = elem( 25,  1.23,"default",    "case, Ozzie, LASKO, Jayy, simon, the whole sm2 squad", 11 );
-    text[5] = elem( 41,  1,   "default",    "The Ody Island, forgive, expert, JTAG, NOOB TEAM, 3500, PUNK, Openminded, and kilos of SSRIs", 9 );
-    text[6] = elem( 170, 0.5, "smallfixed", "Press ^3[{weapnext}]^7 to close", 20 );
+    text[0] = elem( -50, 0.1, "qerFont",     "^3Sass' Cinematic Mod", 30);
+    text[1] = elem( -33, .1,   "qerFont",    "Ported to WAW by ^3Forgive & Antiga", 30 );
+    text[2] = elem( -9,  .1, "qerFont",      "^3Immensely and forever thankful for :", 20 );
+    text[3] = elem( 7.5, .1, "qerFont",    "Sass, Expert, Yoyo1love, Antiga", 15 );
+    text[5] = elem( 170, .1, "smallDevFont", "Press ^3[{weapnext}]^7 to close", 20 );
 
-    self waittill_any( "weapon_switch_started" ,"weapon_fired", "death");
-    
-    //foreach( t in text ) t SetPulseFX( 0, 0, 150 );
+    self waittill( "weapon_change" );
 
-    //self switchToWeapon( self getLastWeapon() );
-    //self setBlurForPlayer( 0, 0.35 );
-    self VisionSetNakedForPlayer( getDvar( "mapname" ), 0.5 );
+    self switchToWeapon( lastWeapon );
+    VisionSetNaked( getDvar( "mapname" ), 0.5 );
 
     waitsec();
-    //self TakeWeapon( "killstreak_predator_missile_mp" );
-    //foreach( t in text ) t destroy();*/
+    self takeWeapon( "dog_bite_mp" );
+    text = [];
 }
 
 elem( offset, size, font, text, pulse )
@@ -251,6 +239,6 @@ elem( offset, size, font, text, pulse )
     elem.alpha = 1;
     elem.color = (1,1,1);
     elem setText( text );
-    elem SetPulseFX( pulse, 900000000, 9000 );
+    elem SetPulseFX( 100, 900000000, 100 );
     return elem;
 }
