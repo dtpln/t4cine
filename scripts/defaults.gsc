@@ -23,6 +23,7 @@ load_defaults()
 
     level.PLAYER_MOVEMENT           = true;     // [true/false] - Turn fall damage, stamina and jump slowdown on or off
     level.PLAYER_AMMO               = true;     // [true/false] - Gives you ammo and equipment upon reloading/using 
+    level.PLAYER_CLASS_CHANGE       = true;     // [true/false] - Allows the player to always change classes on or off
     
     level.VISUAL_LOD                = true;     // [true/false] - Increase LOD distances. MIGHT MAKE YOUR WEAPON FLICKER ON SOME MAPS!!!!
     level.VISUAL_HUD                = false;    // [true/false] - When false, hides the weaponbar/scorebar/minimap; Uses the scr_gameEnded dvar.

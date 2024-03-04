@@ -23,6 +23,7 @@ registerCommands()
     self thread createCommand( "spawn_fx",      "Spawn FX at your xhair",               " <fx_name>",                               scripts\misc::spawn_fx, 1 );
     self thread createCommand( "vision",        "Change vision, reset on death",        " <vision>",                                scripts\misc::change_vision, 1 );
     self thread createCommand( "fog",           "Change ambient fog",                   " <start> <half> <r> <g> <b> <a> <time>",   scripts\misc::change_fog, 1 );
+    self thread createCommand( "rfog",          "Resets ambient fog",                   " ",                                        scripts\misc::reset_fog, 1 );
 
     // Bots
     self thread createCommand( "bot_spawn",     "Add a bot",                            " <weapon_mp> <axis/allies>",   scripts\bots::add, 1);

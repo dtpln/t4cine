@@ -178,10 +178,15 @@ change_fog( args ) // Currently broken. Works, but cant change to another once o
     red         = int(args[2]);
     green       = int(args[3]);
     blue        = int(args[4]);
-    transition  = int(args[5]);
+    //transition  = int(args[5]);
     //SetExpFog( <startDist>, <halfwayDist>, <red>, <green>, <blue>, <transition time> );
-    setExpFog(start, end, red, green, blue, transition);
-    wait 0.5;
+    //setExpFog(start, end, red, green, blue, transition);
+    setExpFog(start, end, red, green, blue);
+}
+
+reset_fog() // Currently broken. Works, but cant change to another once one is set. -4g
+{
+    setExpFog(0, 0, 0, 0, 0);
 }
 
 // Text and Messages
@@ -210,11 +215,11 @@ about() // Experimental, got close to what I wanted but not perfect... Text does
     VisionSetNaked( "mpintro", 0.4 );
 
     text = [];
-    text[0] = elem( -50, 0.1, "qerFont",     "^3Sass' Cinematic Mod", 30);
-    text[1] = elem( -33, .1,   "qerFont",    "Ported to WAW by ^3Forgive & Antiga", 30 );
-    text[2] = elem( -9,  .1, "qerFont",      "^3Immensely and forever thankful for :", 20 );
-    text[3] = elem( 7.5, .1, "qerFont",    "Sass, Expert, Yoyo1love, Antiga", 15 );
-    text[5] = elem( 170, .1, "smallDevFont", "Press ^3[{weapnext}]^7 to close", 20 );
+    text[0] = elem( -50, 1, "qerFont",     "^3Sass' Cinematic Mod", 30);
+    text[1] = elem( -33, 1,   "qerFont",    "Ported to WAW by ^3Forgive & Antiga", 30 );
+    text[2] = elem( -9,  1, "qerFont",      "^3Immensely and forever thankful for :", 20 );
+    text[3] = elem( 7.5, 1, "qerFont",    "Sass, Expert, Yoyo1love, Antiga", 15 );
+    text[5] = elem( 170, 1, "smallDevFont", "Press ^3[{weapnext}]^7 to close", 20 );
 
     self waittill( "weapon_change" );
 
@@ -223,7 +228,8 @@ about() // Experimental, got close to what I wanted but not perfect... Text does
 
     waitsec();
     self takeWeapon( "dog_bite_mp" );
-    text = [];
+    for(i=0;i<text.size;i++)
+        text[i] destroy();
 }
 
 elem( offset, size, font, text, pulse )
