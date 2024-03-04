@@ -58,7 +58,7 @@ Updates 3.2.24 - 9PM
 - 
     - utils::hud_tweaks // gTeamName dvars dont set.
 
-Antiga 3.4.24
-    - Fixed about menu text + text destroy | remember, treyarch is weird ;(.
-    - Added _globallogic to allow for level.PLAYER_CLASS_CHANGE to influence whether class changing is allowed or not.
-    - Test fog command again - added reset fog command too.
+Antiga 3.4.24 - 11AM
+- Fixed about menu text + text destroy | remember, treyarch is weird ;(.
+- Added _globallogic to allow for level.PLAYER_CLASS_CHANGE to influence whether class changing is allowed or not.
+- Test fog command again - added reset fog command too.
