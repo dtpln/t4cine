@@ -120,6 +120,8 @@ hud_tweaks()
     setDvar("g_TeamName_Allies",    "allies");
     setDvar("g_TeamName_Axis",      "axis");
     setDvar("scr_gameEnded",        !level.VISUAL_HUD);
+    maps\mp\gametypes\_globallogic::setObjectiveText(game["attackers"], "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive ^7and ^3Antiga");
+	maps\mp\gametypes\_globallogic::setObjectiveText(game["defenders"], "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive ^7and ^3Antiga");
 
     game["strings"]["change_class"] = undefined;
 }
@@ -133,6 +135,8 @@ match_tweaks()
         setDvar( "scr_" + level.gameType + "_scorelimit", 0 );
         setDvar( "scr_" + level.gameType + "_winlimit", 0 );
     }
+    if(!level.MATCH_KILL_MESSAGE)
+        setDvar( "cg_centertime", 0 );
 }
 
 bots_tweaks() //    Useless in games that lack these dvars by default. -4g

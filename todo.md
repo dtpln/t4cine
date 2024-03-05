@@ -1,32 +1,31 @@
 // Misc
-[x]     clone -- works, just doesnt attach weapon
-[-]     givecamo - no camos in t4, maybe something in the future???
-[x]     drop 
-[]      about -- can create a simple about message thread, but something on the screen would be nice
-[x]     clearbodies -- works as intended
-[x]     viewhands -- works as intended
-[x]     eb_explosive -- works as intended
-[x]     eb_magic
-[x]     score -- works as intended
+- [x]     clone -- works, just doesnt attach weapon
+- [x]     givecamo - no camos in t4, maybe something in the future???
+- [x]     drop 
+- [x]     about -- works, might change in the future
+- [x]     clearbodies -- works as intended
+- [x]     viewhands -- works as intended
+- [x]     eb_explosive -- works as intended
+- [x]     eb_magic
+- [x]     score -- works as intended
 
-[]    spawn_model - can spawn script models, cant spawn anims on said scriptmodels
-[]    spawn_fx
-[x]    vision -- works as intended
-[x]    fog -- done, but once you set a fog, thats it, cant change it.
-[]      change class
+- [x]    spawn_model - can spawn script models, cant spawn anims on said scriptmodels
+- []    spawn_fx // dunno yet, might yeet
+- [x]   vision -- works as intended
+- [x]   fog -- done, but once you set a fog, thats it, cant change it.
+- [x]   change class
 
 // Bots -- select_ents func is being weird, this whole section will take awhile
-[x]    bot_spawn
-[x]    bot_move
-[x]    bot_aim
-[x]    bot_stare
-[x]    bot_model
-[x]    bot_kill
-[x]    bot_holdgun
-[x]    bot_freeze
+- [x]    bot_spawn
+- [x]    bot_move
+- [x]    bot_aim
+- [x]    bot_stare
+- [x]    bot_model
+- [x]    bot_kill
+- [x]    bot_holdgun
+- [x]    bot_freeze
 
-Updates 2.26.24 - 12AM
-    - Antiga
+Antiga 2.26.24 - 12AM
 
 - We need to remove many things/adjust class names, wep names, akimbo checks, etc - will do tomorrow.
 - WAW is weird with how it handles non threaded functions, in most cases, it is safe to add threads IE: scripts\utils::skip_prematch(); would be thread scripts\utils::skip_prematch();
@@ -37,8 +36,7 @@ Updates 2.26.24 - 12AM
 - Fixed loading lag/delay even with developer 2 enabled.
 - Added some comments around code :D.
 
-Updates 3.2.24 - 9PM
-    - 4g
+Forgive 3.2.24 - 9PM
 - Fixed bot functions by adding "for ( i = 0; i < level.players.size; i++ )"
     - Probably a better way to do this in the future.
 - Added a default to implement bot warfare for plutonium in the future.
@@ -50,7 +48,7 @@ Updates 3.2.24 - 9PM
     - utils::camo_int // No camos in T4.
 
 - Need to fix:
-    - misc::class_swap // Broken atm.
+    - ~~misc::class_swap // Broken atm.~~
     - misc::toggle_holding // Gotta do sum with this at some point.
     - misc::change_fog // Currently broken. Works, but cant change to another once one is set.
     - misc::about // Got close to what I wanted but not perfect... Text doesnt disappear on weapon change.
@@ -62,3 +60,14 @@ Antiga 3.4.24 - 11AM
 - Fixed about menu text + text destroy | remember, treyarch is weird ;(.
 - Added _globallogic to allow for level.PLAYER_CLASS_CHANGE to influence whether class changing is allowed or not.
 - Test fog command again - added reset fog command too.
+
+Forgive 3.5.24 - 8PM
+Need to fix:
+- ~~class_swap~~ // Fixed, thanks raf.
+- toggle_holding // Gotta do sum with this at some point.
+- ~~change_fog~~ // Fixed by resetting fog before setting fog to args.
+- ~~about~~ // Fixed, thanks raf.
+- 
+    - ~~hud_tweaks // gTeamName dvars dont set.~~ // Fixed by loading hud_tweaks on connect instead of init.
+
+[+] level.MATCH_KILL_MESSAGE - hides the "you killed" message in the middle of the screen. // need help with this

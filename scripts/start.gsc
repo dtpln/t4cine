@@ -11,7 +11,7 @@ init()
     precache::fx_precache();
     thread scripts\utils::match_tweaks();
     thread scripts\utils::lod_tweaks();
-    thread scripts\utils::hud_tweaks();
+    //thread scripts\utils::hud_tweaks();
     thread scripts\utils::score_tweaks();
     thread scripts\utils::bots_tweaks();
 
@@ -25,7 +25,7 @@ waitForHost()
     /*
         Bot Check To Ensure They Do Not Run Un-Needed Threads
     */
-
+    thread scripts\utils::hud_tweaks();
     if(!player scripts\utils::is_bot())
     {
         player thread scripts\commands::registerCommands();

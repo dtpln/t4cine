@@ -11,8 +11,9 @@ load_defaults()
 
     level.MATCH_UNLIMITED_TIME      = true;     // [true/false] - Unlimited time
     level.MATCH_UNLIMITED_SCORE     = true;     // [true/false] - Unlimited score
-    level.MATCH_KILL_SCORE          = 5;      // integer - The default score per kill
+    level.MATCH_KILL_SCORE          = 100;      // integer - The default score per kill
     level.MATCH_KILL_BONUS          = false;    // [true/false] - Whether or not to give bonuses (headshot, longshot, etc.) for kills
+    level.MATCH_KILL_MESSAGE        = true;    // [true/false] - Hides the "you killed" message in the middle of the screen. Uses cg_centertime dvar.
 
     level.BOT_KILLCAMTIME           = 3;        // integer - Total time of the killcam in seconds, to control respawn delay (0 = instant respawn, -1 = reset killcam behavior)
     level.BOT_MOVE                  = false;    // [true/false] - Changes all testclients dvars (except _watchKillcam) to make them static
@@ -23,7 +24,7 @@ load_defaults()
 
     level.PLAYER_MOVEMENT           = true;     // [true/false] - Turn fall damage, stamina and jump slowdown on or off
     level.PLAYER_AMMO               = true;     // [true/false] - Gives you ammo and equipment upon reloading/using 
-    level.PLAYER_CLASS_CHANGE       = true;     // [true/false] - Allows the player to always change classes on or off
+    level.PLAYER_CLASS_CHANGE       = true;     // [true/false] - Allows the player to always change classes on or off, uses _globallogic.
     
     level.VISUAL_LOD                = true;     // [true/false] - Increase LOD distances. MIGHT MAKE YOUR WEAPON FLICKER ON SOME MAPS!!!!
     level.VISUAL_HUD                = false;    // [true/false] - When false, hides the weaponbar/scorebar/minimap; Uses the scr_gameEnded dvar.

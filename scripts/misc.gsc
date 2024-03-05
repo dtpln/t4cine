@@ -35,9 +35,11 @@ class_swap()
     }
 }
 
-// As for as equipment goes, going from a lethal that doesn't depend --
-// -- on scripts to one that does will not work. (e.g TK to Claymore)
-// Not gonna bother because I highly doubt anybody does that anyway.
+//  As for as equipment goes, going from a lethal that doesn't depend --
+//  -- on scripts to one that does will not work. (e.g TK to Claymore)
+//  Not gonna bother because I highly doubt anybody does that anyway.
+
+//  Removed since T4 has a working give command. -4g
 /*give( args )
 {
     weapon  = args[0];
@@ -171,22 +173,23 @@ change_vision( args )
     self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Vision changed to : " + vision);
 }
 
-change_fog( args ) // Currently broken. Works, but cant change to another once one is set. -4g
+change_fog( args )
 {
     start       = int(args[0]);
     end         = int(args[1]);
     red         = int(args[2]);
     green       = int(args[3]);
     blue        = int(args[4]);
-    //transition  = int(args[5]);
+    transition  = int(args[5]);
     //SetExpFog( <startDist>, <halfwayDist>, <red>, <green>, <blue>, <transition time> );
-    //setExpFog(start, end, red, green, blue, transition);
-    setExpFog(start, end, red, green, blue);
+    setExpFog(0, 0, 0, 0, 0, 0);
+    waitframe();
+    setExpFog(start, end, red, green, blue, transition);
 }
 
-reset_fog() // Currently broken. Works, but cant change to another once one is set. -4g
+reset_fog()
 {
-    setExpFog(0, 0, 0, 0, 0);
+    setExpFog(0, 0, 0, 0, 0, 0);
 }
 
 // Text and Messages
@@ -202,12 +205,12 @@ welcome()
 	self.donefirst = 1;
 }
 
-about() // Experimental, got close to what I wanted but not perfect... Text doesnt disappear on weapon change. -4g
+about()
 {
     lastWeapon = self getCurrentWeapon();
-    self giveWeapon( "dog_bite_mp" );
-	self SwitchToWeapon( "dog_bite_mp" );
-    while(self getCurrentWeapon() != "dog_bite_mp")
+    self giveWeapon( "briefcase_bomb_defuse_mp" );
+	self SwitchToWeapon( "briefcase_bomb_defuse_mp" );
+    while(self getCurrentWeapon() != "briefcase_bomb_defuse_mp")
         waitframe();
 
     wait 0.55;
@@ -215,21 +218,21 @@ about() // Experimental, got close to what I wanted but not perfect... Text does
     VisionSetNaked( "mpintro", 0.4 );
 
     text = [];
-    text[0] = elem( -50, 1, "qerFont",     "^3Sass' Cinematic Mod", 30);
-    text[1] = elem( -33, 1,   "qerFont",    "Ported to WAW by ^3Forgive & Antiga", 30 );
-    text[2] = elem( -9,  1, "qerFont",      "^3Immensely and forever thankful for :", 20 );
+    text[0] = elem( -50, 2, "qerFont",     "^3Sass' Cinematic Mod", 15);
+    text[1] = elem( -33, 1,   "qerFont",    "Ported to WAW by ^3Forgive & Antiga", 15 );
+    text[2] = elem( -9,  1, "qerFont",      "^3Immensely and forever thankful for :", 15 );
     text[3] = elem( 7.5, 1, "qerFont",    "Sass, Expert, Yoyo1love, Antiga", 15 );
-    text[5] = elem( 170, 1, "smallDevFont", "Press ^3[{weapnext}]^7 to close", 20 );
+    text[4] = elem( 170, 1, "smallDevFont", "Press ^3[{weapnext}]^7 to close", 15 );
 
     self waittill( "weapon_change" );
-
+    for(i=0;i<text.size;i++)
+        text[i] destroy();
     self switchToWeapon( lastWeapon );
     VisionSetNaked( getDvar( "mapname" ), 0.5 );
 
     waitsec();
-    self takeWeapon( "dog_bite_mp" );
-    for(i=0;i<text.size;i++)
-        text[i] destroy();
+    self takeWeapon( "briefcase_bomb_defuse_mp" );
+    
 }
 
 elem( offset, size, font, text, pulse )

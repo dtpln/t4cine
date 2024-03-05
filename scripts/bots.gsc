@@ -65,8 +65,7 @@ move( args )
     name = args[0];
     for ( i = 0; i < level.players.size; i++ )
     {
-        player = level.players[i];  //  this line fixes all if ( select_ents lines, but throws an error.
-                                    //  probably a better way of doing this... -4g
+        player = level.players[i];
         if ( select_ents( player, name, self ) ) {
             player setOrigin( at_crosshair( self ) );
             player save_spawn();
@@ -80,8 +79,7 @@ aim( args )
     for ( i = 0; i < level.players.size; i++ )
     {
         player = level.players[i];
-        if ( select_ents( player, name, self ) ) 
-        {
+        if ( select_ents( player, name, self ) ) {
             player thread doaim();
             wait 0.5;
             player notify( "stopaim" );
@@ -95,8 +93,7 @@ stare( args )
     for ( i = 0; i < level.players.size; i++ )
     {
         player = level.players[i];
-        if ( select_ents( player, name, self ) ) 
-        {
+        if ( select_ents( player, name, self ) ) {
             player.pers["isStaring"] ^= 1;
             if ( player.pers["isStaring"] ) player thread doaim();
             else player notify( "stopaim" );
@@ -112,8 +109,7 @@ model( args )
     for ( i = 0; i < level.players.size; i++ )
     {
         player = level.players[i];
-        if ( select_ents( player, name, self ) ) 
-        {
+        if ( select_ents( player, name, self ) ) {
             player.pers["fakeTeam"]  = team;
             player.pers["fakeModel"] = model;
 
@@ -162,14 +158,12 @@ kill( args )
     for ( i = 0; i < level.players.size; i++ )
     {
         player = level.players[i];
-        if ( select_ents( player, name, self ) )
-        {
+        if ( select_ents( player, name, self ) ){
             parameters  = strTok( level.killparams[mode], ":" );
             fx          = parameters[0];
             tag         = player getTagOrigin( parameters[1] );
             hitloc      = parameters[2];
 
-            //playFXOnTag( getFX( fx ), self, tag );
             player thread [[level.callbackPlayerDamage]]( player, player, player.health, 8, "MOD_SUICIDE", self getCurrentWeapon(), tag, tag, hitloc, 0 );
             
         }
@@ -198,10 +192,6 @@ attach_weapons( loadout )
     {
         self.replica = getWeaponModel( loadout.primary );
         self attach( self.replica, "tag_weapon_right", true );
-
-        //hidetags = GetWeaponHideTags( loadout.primary );
-       // for ( i = 0; i < hidetags.size; i++ )
-         //   self HidePart( hidetags[i], self.replica );
     }
 }
 
