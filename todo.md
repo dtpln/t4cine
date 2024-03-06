@@ -61,13 +61,12 @@ Antiga 3.4.24 - 11AM
 - Added _globallogic to allow for level.PLAYER_CLASS_CHANGE to influence whether class changing is allowed or not.
 - Test fog command again - added reset fog command too.
 
-Forgive 3.5.24 - 8PM
+Forgive 3.6.24 - 12AM
 Need to fix:
-- ~~class_swap~~ // Fixed, thanks raf.
 - toggle_holding // Gotta do sum with this at some point.
-- ~~change_fog~~ // Fixed by resetting fog before setting fog to args.
-- ~~about~~ // Fixed, thanks raf.
-- 
-    - ~~hud_tweaks // gTeamName dvars dont set.~~ // Fixed by loading hud_tweaks on connect instead of init.
+- trying to skip prematch!!! -- update: got prematch to skip but welcome message wont show now. might just set prematch to like 2 or sum...
 
-[+] level.MATCH_KILL_MESSAGE - hides the "you killed" message in the middle of the screen. // need help with this
+[+] level.MATCH_KILL_MESSAGE - hides the "you killed" message in the middle of the screen. // need help with this, doesnt work all the time. needs testing...
+
+Fixed:
+- VISUAL_HUD, switched from scr_gameended to ui_hud_hardcore dvars.

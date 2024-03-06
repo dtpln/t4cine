@@ -106,6 +106,13 @@ is_akimbo( weapon )
     return false;
 }
 
+skip_prematch()
+{
+    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "waiting_for_teams", 0 );
+    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "match_starting_in", 0 );
+    //level.prematchPeriodEnd = -1;
+}
+
 lod_tweaks()
 {
     if(!level.VISUAL_LOD) return;
@@ -119,7 +126,7 @@ hud_tweaks()
     setDvar("sv_hostname", "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive & Antiga");
     setDvar("g_TeamName_Allies",    "allies");
     setDvar("g_TeamName_Axis",      "axis");
-    setDvar("scr_gameEnded",        !level.VISUAL_HUD);
+    setDvar("ui_hud_hardcore",        !level.VISUAL_HUD);
     maps\mp\gametypes\_globallogic::setObjectiveText(game["attackers"], "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive ^7and ^3Antiga");
 	maps\mp\gametypes\_globallogic::setObjectiveText(game["defenders"], "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive ^7and ^3Antiga");
 
@@ -128,14 +135,14 @@ hud_tweaks()
 
 match_tweaks()
 {
-    if(level.MATCH_UNLIMITED_TIME)
+    if( level.MATCH_UNLIMITED_TIME )
         setDvar( "scr_" + level.gameType + "_timelimit", 0 );
 
-    if(level.MATCH_UNLIMITED_SCORE) {
+    if( level.MATCH_UNLIMITED_SCORE ) {
         setDvar( "scr_" + level.gameType + "_scorelimit", 0 );
         setDvar( "scr_" + level.gameType + "_winlimit", 0 );
     }
-    if(!level.MATCH_KILL_MESSAGE)
+    if( !level.MATCH_KILL_MESSAGE )
         setDvar( "cg_centertime", 0 );
 }
 

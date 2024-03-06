@@ -3,7 +3,6 @@
  *      Player-related functions
  */
 
-//#include common_scripts\utility;
 #include scripts\utils;
 
 playerRegenAmmo()
