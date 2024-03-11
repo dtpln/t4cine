@@ -108,10 +108,7 @@ is_akimbo( weapon )
 
 skip_prematch() // Works, i guess... -4g
 {
-    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "waiting_for_teams", "0" );
-    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "Moviemaking starts in:", 0 );
-    setDvar( "scr_game_graceperiod", 5);
-    level.prematchPeriodEnd = -1;
+    level.prematchPeriod = -1; // Fixed
 }
 
 lod_tweaks()
@@ -127,7 +124,7 @@ hud_tweaks()
     setDvar("sv_hostname", "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive & Antiga");
     setDvar("g_TeamName_Allies",    "allies");
     setDvar("g_TeamName_Axis",      "axis");
-    setDvar("ui_hud_hardcore",        !level.VISUAL_HUD);
+    setDvar("sv_cheats", 1); //REQUIRED TO MAKE ui_hud_hardcore work!
     maps\mp\gametypes\_globallogic::setObjectiveText(game["attackers"], "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive ^7and ^3Antiga");
 	maps\mp\gametypes\_globallogic::setObjectiveText(game["defenders"], "^3Sass' Cinematic Mod ^7- Ported to WAW by ^3Forgive ^7and ^3Antiga");
 

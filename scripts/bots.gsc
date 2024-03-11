@@ -13,10 +13,11 @@ add( args )
 {
     weapon = args[0];
     team = args[1];
-    
+    model = args[2];
+
     ent = addtestclient();
     ent persistence();
-    ent spawnme(self, weapon, team);
+    ent thread spawnme(self, weapon, team, model); // this needs to be threaded or else it will spawn two..
 
     create_kill_params();
 }
@@ -28,7 +29,7 @@ persistence()
     self.pers["fakeModel"]  = false;    // has the bot's model been changed?
 }
 
-spawnme( owner, weapon, team )
+spawnme( owner, weapon, team, model )
 {
     while ( !isdefined( self.pers["team"] ) ) skipframe();
 
@@ -41,7 +42,7 @@ spawnme( owner, weapon, team )
 
     skipframe();
 
-    self notify("menuresponse","changeclass","sniper_mp");
+    self notify("menuresponse","changeclass",model);
 
     loadout = create_loadout( weapon );
     self thread create_spawn_thread( scripts\bots::give_loadout_on_spawn, loadout );

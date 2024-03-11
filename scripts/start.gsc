@@ -17,16 +17,14 @@ waitForHost()
 {
     level waittill( "connecting", player );
 
-    player scripts\commands::registerCommands();
-    
     scripts\utils::skip_prematch();
     scripts\utils::match_tweaks();
     scripts\utils::lod_tweaks();
     scripts\utils::hud_tweaks();
     scripts\utils::score_tweaks();
     scripts\utils::bots_tweaks();
-    player thread scripts\misc::welcome();
     player thread scripts\ui::await();
+    player thread scripts\commands::registerCommands();
     player thread onPlayerSpawned();
 }
 
@@ -44,5 +42,7 @@ onPlayerSpawned()
         // Only stuff that gets reset/removed because of death goes here
         self scripts\player::movementTweaks();
         self scripts\misc::reset_models();
+        if(!self.isdone)
+            self scripts\misc::welcome();
     }
 }

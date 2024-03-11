@@ -198,14 +198,11 @@ reset_fog()
 // Text and Messages
 welcome()
 {
-    self endon( "disconnect" );
-    level waittill("prematch_over");
     self freezeControls( false );
-    level.prematchPeriodEnd = -1;
 	self IPrintLn("Welcome to ^3Sass' Cinematic Mod");
     self IPrintLn("Ported to WAW by ^3Forgive & Antiga");
 	self IPrintLn("Type ^3/about 1 ^7for more info");
-	self.donefirst = 1;
+    self.isdone = true;
 }
 
 about()

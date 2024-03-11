@@ -5,7 +5,6 @@
 
 #include scripts\utils;
 
-
 registerCommands()
 {
     level endon( "disconnect" );
@@ -26,7 +25,7 @@ registerCommands()
     self thread createCommand( "rfog",          "Resets ambient fog",                   " ",                                        scripts\misc::reset_fog, 1 );
 
     // Bots
-    self thread createCommand( "bot_spawn",     "Add a bot",                            " <weapon_mp> <axis/allies>",               scripts\bots::add, 1);
+    self thread createCommand( "bot_spawn",     "Add a bot",                            " <weapon_mp> <axis/allies> <class>",               scripts\bots::add, 1);
     self thread createCommand( "bot_move",      "Move bot to xhair",                    " <bot_name>",                              scripts\bots::move, 1 );
     self thread createCommand( "bot_aim",       "Make bot look at closest enemy",       " <bot_name>",                              scripts\bots::aim, 1 );
     self thread createCommand( "bot_stare",     "Make bot stare at closest enemy",      " <bot_name>",                              scripts\bots::stare, 1 );

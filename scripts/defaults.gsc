@@ -28,6 +28,7 @@ load_defaults()
     
     level.VISUAL_LOD                = true;     // [true/false] - Increase LOD distances. MIGHT MAKE YOUR WEAPON FLICKER ON SOME MAPS!!!!
     level.VISUAL_HUD                = true;    // [true/false] - When false, hides the weaponbar/scorebar/minimap; Uses the ui_hud_hardcore dvar.
+    level.INGAME_MUSIC              = false;    // [true/false] - When false, disables music in game + leader sounds.
 
     //  Added features -4g
     level.BOT_WARFARE               = false;    // [true/false] - When true, enables bot warfare. // BW DOESNT WORK ON STEAM, MAYBE IMPLEMENT ON PLUTONIUM? -4g

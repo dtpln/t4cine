@@ -3269,7 +3269,9 @@ startGame()
 	thread timeLimitClock();
 	thread gracePeriod();
 
-	thread musicController();
+	if(level.INGAME_MUSIC)
+		thread musicController();
+	
 	thread maps\mp\gametypes\_missions::roundBegin();
 }
 
@@ -3369,16 +3371,13 @@ waitForPlayers()
 
 prematchPeriod()
 {
-	makeDvarServerInfo( "ui_hud_hardcore", 1 );
-	setDvar( "ui_hud_hardcore", 1 );
+	makeDvarServerInfo( "ui_hud_hardcore", level.VISUAL_HUD );
+	setDvar( "ui_hud_hardcore", level.VISUAL_HUD );
 	level endon( "game_ended" );
 	
 	if ( level.prematchPeriod > 0 )
 	{
 		thread matchStartTimer();
-
-		waitForPlayers();
-
 		wait ( level.prematchPeriod );
 	}
 	else
@@ -3408,7 +3407,7 @@ prematchPeriod()
 	if ( game["state"] != "playing" )
 		return;
 
-	setDvar( "ui_hud_hardcore", level.hardcoreMode );
+	setDvar( "ui_hud_hardcore", level.VISUAL_HUD );
 }
 
 
@@ -3450,6 +3449,9 @@ announceRoundWinner( winner, delay )
 		wait delay;
 
 	if ( !isDefined( winner ) || isPlayer( winner ) )
+		return;
+
+	if(!level.INGAME_MUSIC)
 		return;
 
 	if ( winner == "allies" )
@@ -7179,6 +7181,8 @@ leaderDialog( dialog, team, group, excludeList, squadDialog, squadID )
 	if ( level.splitscreen )
 		return;
 
+	if(!level.INGAME_MUSIC)
+		return;
 		
 	if ( !isDefined( team ) )
 	{
@@ -7242,6 +7246,9 @@ leaderDialogBothTeams( dialog1, team1, dialog2, team2, group, excludeList )
 	if ( level.splitscreen )
 		return;
 
+	if(!level.INGAME_MUSIC)
+		return;
+
 	if ( level.splitscreen )
 	{
 		if ( level.players.size )
@@ -7293,6 +7300,9 @@ leaderDialogOnPlayer( dialog, group )
 
 	if ( level.splitscreen )
 		return;
+
+	if(!level.INGAME_MUSIC)
+		return;
 	
 	if ( !isDefined( team ) )
 		return;
@@ -7326,6 +7336,9 @@ leaderDialogOnPlayer( dialog, group )
 playLeaderDialogOnPlayer( dialog, team )
 {
 	self endon ( "disconnect" );
+
+	if(!level.INGAME_MUSIC)
+		return;
 	
 	self.leaderDialogActive = true;
 	if ( isDefined( self.leaderDialogGroups[dialog] ) )

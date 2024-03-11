@@ -77,6 +77,14 @@ Fixed:
 - [-] Removed.
 - [~] Needs to be fixed.
 
+### Antiga 3.11.24 - 9AM
+- [🗸] Prematch has been fully fixed/removed -> Check _globallogic for more information.
+- [🗸] Hardcore hud controlled via VISUAL_HUD has been resolved -> Check _globallogic for more information. 
+- [+] Added class argument to mvm_bot_spawn - now uses mvm_bot_spawn weapon team model (EXAMPLE: SNIPER_MP).
+- [🗸] Spawn message no longer doubles, changed it to only happen once at spawn.
+- [🗸] Fixed double spawning bots, this requires a thread.
+- [+] Added level.INGAME_MUSIC - if set to false, it will disable the ingame music + announcers.
+
 #### Changelog
 
 - [+] README
@@ -87,8 +95,4 @@ Fixed:
 
 - [🗸] Fixed weapons dropping with attached "fake weapon" for now.
 
-- [~] SkipPrematch - Needs better fix rather than lowering grace period time.
-
 - [~] Holding functions, needs a better system.
-
-- [~] VISUAL_HUD, doesnt set by default. Oh well...
