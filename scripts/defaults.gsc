@@ -27,7 +27,7 @@ load_defaults()
     level.PLAYER_CLASS_CHANGE       = true;     // [true/false] - Allows the player to always change classes on or off, uses _globallogic.
     
     level.VISUAL_LOD                = true;     // [true/false] - Increase LOD distances. MIGHT MAKE YOUR WEAPON FLICKER ON SOME MAPS!!!!
-    level.VISUAL_HUD                = false;    // [true/false] - When false, hides the weaponbar/scorebar/minimap; Uses the ui_hud_hardcore dvar.
+    level.VISUAL_HUD                = true;    // [true/false] - When false, hides the weaponbar/scorebar/minimap; Uses the ui_hud_hardcore dvar.
 
     //  Added features -4g
     level.BOT_WARFARE               = false;    // [true/false] - When true, enables bot warfare. // BW DOESNT WORK ON STEAM, MAYBE IMPLEMENT ON PLUTONIUM? -4g

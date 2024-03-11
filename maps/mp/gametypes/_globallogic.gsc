@@ -1,3 +1,6 @@
+// _globallogic.gsc -- added to manually include hooks in sass' original mod. -4g
+// functions edited: delayStartRagdoll, 
+
 #include maps\mp\_utility;
 #include maps\mp\gametypes\_hud_util;
 #include maps\mp\_burnplayer;
@@ -7138,69 +7141,24 @@ debugLine( start, end )
 	}
 }
 
-delayStartRagdoll( ent, sHitLoc, vDir, sWeapon, eInflictor, sMeansOfDeath )
+delayStartRagdoll( ent, sHitLoc, vDir, sWeapon, eInflictor, sMeansOfDeath ) //	Makes ragdolls start later much than vanilla, delete after given time.
 {
-	if ( isDefined( ent ) )
-	{
-		deathAnim = ent getcorpseanim();
-		if ( animhasnotetrack( deathAnim, "ignore_ragdoll" ) )
-			return;
-	}
-	
-	if ( level.oldschool )
-	{
-		if ( !isDefined( vDir ) )
-			vDir = (0,0,0);
-		
-		explosionPos = ent.origin + ( 0, 0, getHitLocHeight( sHitLoc ) );
-		explosionPos -= vDir * 20;
-		//thread debugLine( ent.origin + (0,0,(explosionPos[2] - ent.origin[2])), explosionPos );
-		explosionRadius = 40;
-		explosionForce = .75;
-		if ( sMeansOfDeath == "MOD_IMPACT" || sMeansOfDeath == "MOD_EXPLOSIVE" || isSubStr(sMeansOfDeath, "MOD_GRENADE") || isSubStr(sMeansOfDeath, "MOD_PROJECTILE") || sHitLoc == "head" || sHitLoc == "helmet" )
-		{
-			explosionForce = 2.5;
-		}
-		
-		ent startragdoll( 1 );
-		
-		wait .05;
-		
-		if ( !isDefined( ent ) )
-			return;
-		
-		// apply extra physics force to make the ragdoll go crazy
-		physicsExplosionSphere( explosionPos, explosionRadius, explosionRadius/2, explosionForce );
-		return;
-	}
-	
-	wait( 0.2 );
-	
-	if ( !isDefined( ent ) )
-		return;
-	
-	if ( ent isRagDoll() )
-		return;
-	
-	deathAnim = ent getcorpseanim();
+	if ( !isDefined( ent ) || ent isRagDoll() )
+        return;
 
-	startFrac = 0.35;
+    deathAnim = ent getCorpseAnim();
 
-	if ( animhasnotetrack( deathAnim, "start_ragdoll" ) )
-	{
-		times = getnotetracktimes( deathAnim, "start_ragdoll" );
-		if ( isDefined( times ) )
-			startFrac = times[0];
-	}
+    if( level.BOT_LATERAGDOLL )
+            timeMult = 0.9;
+    else timeMult = 0.65;
 
-	waitTime = startFrac * getanimlength( deathAnim );
-	wait( waitTime );
+    wait ( getanimlength( deathAnim ) * timeMult );
+    ent startragdoll( 1 );
 
-	if ( isDefined( ent ) )
-	{
-		println( "Ragdolling after " + waitTime + " seconds" );
-		ent startragdoll( 1 );
-	}
+    if ( level.BOT_AUTOCLEAR > 0 ) {
+        wait level.BOT_AUTOCLEAR;
+        ent delete();
+    }
 }
 
 

@@ -25,7 +25,7 @@
 - [x]    bot_holdgun
 - [x]    bot_freeze
 
-Antiga 2.26.24 - 12AM
+### Antiga 2.26.24 - 12AM
 
 - We need to remove many things/adjust class names, wep names, akimbo checks, etc - will do tomorrow.
 - WAW is weird with how it handles non threaded functions, in most cases, it is safe to add threads IE: scripts\utils::skip_prematch(); would be thread scripts\utils::skip_prematch();
@@ -36,7 +36,7 @@ Antiga 2.26.24 - 12AM
 - Fixed loading lag/delay even with developer 2 enabled.
 - Added some comments around code :D.
 
-Forgive 3.2.24 - 9PM
+### Forgive 3.2.24 - 9PM
 - Fixed bot functions by adding "for ( i = 0; i < level.players.size; i++ )"
     - Probably a better way to do this in the future.
 - Added a default to implement bot warfare for plutonium in the future.
@@ -56,12 +56,12 @@ Forgive 3.2.24 - 9PM
 - 
     - utils::hud_tweaks // gTeamName dvars dont set.
 
-Antiga 3.4.24 - 11AM
+### Antiga 3.4.24 - 11AM
 - Fixed about menu text + text destroy | remember, treyarch is weird ;(.
 - Added _globallogic to allow for level.PLAYER_CLASS_CHANGE to influence whether class changing is allowed or not.
 - Test fog command again - added reset fog command too.
 
-Forgive 3.6.24 - 12AM
+### Forgive 3.6.24 - 12AM
 Need to fix:
 - toggle_holding // Gotta do sum with this at some point.
 - trying to skip prematch!!! -- update: got prematch to skip but welcome message wont show now. might just set prematch to like 2 or sum...
@@ -70,3 +70,25 @@ Need to fix:
 
 Fixed:
 - VISUAL_HUD, switched from scr_gameended to ui_hud_hardcore dvars.
+
+### Forgive 3.10.24 -10PM
+- Please use new legend:
+- [+] Added.
+- [-] Removed.
+- [~] Needs to be fixed.
+
+#### Changelog
+
+- [+] README
+
+- [+] Added _weapons.gsc to include "hooks"... Ref scripts\hooks.gsc
+
+- [+] Added _globallogic.gsc to include "hooks"... Ref scripts\hooks.gsc
+
+- [🗸] Fixed weapons dropping with attached "fake weapon" for now.
+
+- [~] SkipPrematch - Needs better fix rather than lowering grace period time.
+
+- [~] Holding functions, needs a better system.
+
+- [~] VISUAL_HUD, doesnt set by default. Oh well...

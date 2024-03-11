@@ -39,7 +39,7 @@ class_swap()
 //  -- on scripts to one that does will not work. (e.g TK to Claymore)
 //  Not gonna bother because I highly doubt anybody does that anyway.
 
-//  Removed since T4 has a working give command. -4g
+//  Removed since T4 has a working give command, and doesn't have camos. -4g
 /*give( args )
 {
     weapon  = args[0];
@@ -129,21 +129,24 @@ reset_models()
 // Toggles
 toggle_holding() //     Gotta do sum with this at some point. -4g
 {
-    /*level.BOT_WEAPHOLD ^= 1;
+    level.BOT_WEAPHOLD ^= 1;
     self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Holding weapons on death: " + bool(level.BOT_WEAPHOLD) );
-
+    
     if( !level.BOT_WEAPHOLD ) 
     {
         for ( i = 0; i < level.players.size; i++ )
-            //player.replica delete();
-    }*/
+        {
+            player = level.players;
+            player.replica delete();
+        }
+    }
 }
 
 toggle_freeze()
 {
     level.BOT_MOVE ^= 1;
     bots_tweaks();
-    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Frozen bots: " + bool(level.BOT_SPAWN_MOVE) );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]No AI in T4. :(" );
 }
 
 

@@ -18,7 +18,8 @@ waitForHost()
     level waittill( "connecting", player );
 
     player scripts\commands::registerCommands();
-
+    
+    scripts\utils::skip_prematch();
     scripts\utils::match_tweaks();
     scripts\utils::lod_tweaks();
     scripts\utils::hud_tweaks();

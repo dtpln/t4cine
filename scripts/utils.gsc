@@ -106,11 +106,12 @@ is_akimbo( weapon )
     return false;
 }
 
-skip_prematch()
+skip_prematch() // Works, i guess... -4g
 {
-    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "waiting_for_teams", 0 );
-    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "match_starting_in", 0 );
-    //level.prematchPeriodEnd = -1;
+    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "waiting_for_teams", "0" );
+    //thread maps\mp\gametypes\_globallogic::matchStartTimer( "Moviemaking starts in:", 0 );
+    setDvar( "scr_game_graceperiod", 5);
+    level.prematchPeriodEnd = -1;
 }
 
 lod_tweaks()

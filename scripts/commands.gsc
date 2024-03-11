@@ -11,10 +11,10 @@ registerCommands()
     level endon( "disconnect" );
 
     // Misc
-    self thread createCommand( "clone",         "Create a clone of yourself",           " ",                            scripts\misc::clone, 0 );
-    self thread createCommand( "drop",          "Drop your current weapon",             " ",                            scripts\misc::drop, 0 );
-    self thread createCommand( "about",         "About the mod",                        " ",                            scripts\misc::about, 0 );
-    self thread createCommand( "clearbodies",   "Remove all player/bot corpses",        " ",                            scripts\misc::clear_bodies, 0 );
+    self thread createCommand( "clone",         "Create a clone of yourself",           " Set to 1",                            scripts\misc::clone, 0 );
+    self thread createCommand( "drop",          "Drop your current weapon",             " Set to 1",                            scripts\misc::drop, 0 );
+    self thread createCommand( "about",         "About the mod",                        " Set to 1",                            scripts\misc::about, 0 );
+    self thread createCommand( "clearbodies",   "Remove all player/bot corpses",        " Set to 1",                            scripts\misc::clear_bodies, 0 );
     self thread createCommand( "viewhands",     "Change your viewmodel",                " <model_name>",                scripts\misc::viewhands, 0 );
     self thread createCommand( "eb_explosive",  "Explosion radius on bullet impact",    " <radius>",                    scripts\misc::expl_bullets, 0 );
     self thread createCommand( "eb_magic",      "Kill bots within defined FOV value",   " <degrees>",                   scripts\misc::magc_bullets, 0 );
@@ -91,7 +91,6 @@ createCommand( command, desc, usage, callback, use_prefix )
         }
         else
             setDvar( command, desc );
-
         wait 0.05;
     }
 }
