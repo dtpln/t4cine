@@ -1,33 +1,40 @@
+# <p style="text-align: center;">**T4CINE FEATURES AND ROADMAP**</p>
+
 **MISC FUNCTIONS**
     
-    - [x]     clone -- works, just doesnt attach weapon
-    - [x]     givecamo - no camos in t4, maybe something in the future???
-    - [x]     drop 
-    - [x]     about -- works, might change in the future
-    - [x]     clearbodies -- works as intended
-    - [x]     viewhands -- works as intended
-    - [x]     eb_explosive -- works as intended
-    - [x]     eb_magic
-    - [x]     score -- works as intended
+    - [x]     clone         -- DONE ( Although doesn't attach weapon model to clone. )
+    - [x]     givecamo      -- DONE ( There are no camos in T4. )
+    - [x]     drop          -- DONE
+    - [x]     about         -- DONE
+    - [x]     clearbodies   -- DONE
+    - [x]     viewhands     -- DONE
+    - [x]     eb_explosive  -- DONE
+    - [x]     eb_magic      -- DONE
+    - [x]     score         -- DONE
 
 **VISUAL FUNCTIONS**
 
-    - [x]    spawn_model - can spawn script models, cant spawn anims on said scriptmodels
-    - [ ]    spawn_fx // dunno yet, might yeet
-    - [x]   vision -- works as intended
-    - [x]   fog -- done, but once you set a fog, thats it, cant change it.
-    - [x]   change class
+    - [x]    spawn_model    -- DONE
+    - [ ]    spawn_fx       -- FIX THIS
+    - [x]   vision          -- DONE
+    - [x]   fog             -- DONE ( Need to update with reset fix. )
+    - [x]   change class    -- DONE
 
 **BOT FUNCTIONS**
 
-    - [x]    bot_spawn
-    - [x]    bot_move
-    - [x]    bot_aim
-    - [x]    bot_stare
-    - [x]    bot_model
-    - [x]    bot_kill
-    - [x]    bot_holdgun
-    - [x]    bot_freeze
+    - [x]    spawn          -- DONE
+    - [x]    move           -- DONE
+    - [x]    aim            -- DONE
+    - [x]    stare          -- DONE
+    - [x]    model          -- DONE ( This function is a bit buggy with kill function. )
+    - [x]    kill           -- DONE
+    - [x]    holdgun        -- DONE
+    - [x]    freeze         -- DONE ( No need, bots don't have AI in T4. )
+
+<br/><br/>
+**PLANNED FEATURES**
+
+    - [ ]    Implementation of Bot Warfare mod for T4 Plutonium.
 
 
 
