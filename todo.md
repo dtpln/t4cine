@@ -1,30 +1,55 @@
-// Misc
-- [x]     clone -- works, just doesnt attach weapon
-- [x]     givecamo - no camos in t4, maybe something in the future???
-- [x]     drop 
-- [x]     about -- works, might change in the future
-- [x]     clearbodies -- works as intended
-- [x]     viewhands -- works as intended
-- [x]     eb_explosive -- works as intended
-- [x]     eb_magic
-- [x]     score -- works as intended
+**MISC FUNCTIONS**
+    
+    - [x]     clone -- works, just doesnt attach weapon
+    - [x]     givecamo - no camos in t4, maybe something in the future???
+    - [x]     drop 
+    - [x]     about -- works, might change in the future
+    - [x]     clearbodies -- works as intended
+    - [x]     viewhands -- works as intended
+    - [x]     eb_explosive -- works as intended
+    - [x]     eb_magic
+    - [x]     score -- works as intended
 
-- [x]    spawn_model - can spawn script models, cant spawn anims on said scriptmodels
-- []    spawn_fx // dunno yet, might yeet
-- [x]   vision -- works as intended
-- [x]   fog -- done, but once you set a fog, thats it, cant change it.
-- [x]   change class
+**VISUAL FUNCTIONS**
 
-// Bots -- select_ents func is being weird, this whole section will take awhile
-- [x]    bot_spawn
-- [x]    bot_move
-- [x]    bot_aim
-- [x]    bot_stare
-- [x]    bot_model
-- [x]    bot_kill
-- [x]    bot_holdgun
-- [x]    bot_freeze
+    - [x]    spawn_model - can spawn script models, cant spawn anims on said scriptmodels
+    - [ ]    spawn_fx // dunno yet, might yeet
+    - [x]   vision -- works as intended
+    - [x]   fog -- done, but once you set a fog, thats it, cant change it.
+    - [x]   change class
 
+**BOT FUNCTIONS**
+
+    - [x]    bot_spawn
+    - [x]    bot_move
+    - [x]    bot_aim
+    - [x]    bot_stare
+    - [x]    bot_model
+    - [x]    bot_kill
+    - [x]    bot_holdgun
+    - [x]    bot_freeze
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
 ### Antiga 2.26.24 - 12AM
 
 - We need to remove many things/adjust class names, wep names, akimbo checks, etc - will do tomorrow.
