@@ -2,34 +2,32 @@
 
 **MISC FUNCTIONS**
     
-    - [x]     clone         -- DONE ( Although doesn't attach weapon model to clone. )
-    - [x]     givecamo      -- DONE ( There are no camos in T4. )
-    - [x]     drop          -- DONE
-    - [x]     about         -- DONE
-    - [x]     clearbodies   -- DONE
-    - [x]     viewhands     -- DONE
-    - [x]     eb_explosive  -- DONE
-    - [x]     eb_magic      -- DONE
-    - [x]     score         -- DONE
+    - [x]     clone         -- <set to 1>
+    - [x]     givecamo      -- <weapon_mp>
+    - [x]     drop          -- <set to 1>
+    - [x]     about         -- <set to 1>
+    - [x]     clearbodies   -- <set to 1>
+    - [x]     viewhands     -- <set to 1>
+    - [x]     eb_explosive  -- <radius>
+    - [x]     eb_magic      -- <degrees>
 
 **VISUAL FUNCTIONS**
 
-    - [x]    spawn_model    -- DONE
-    - [ ]    spawn_fx       -- FIX THIS
-    - [x]   vision          -- DONE
-    - [x]   fog             -- DONE ( Need to update with reset fix. )
-    - [x]   change class    -- DONE
+    - [x]    spawn_model    -- <model_name>
+    - [ ]    spawn_fx       -- <fx_name>
+    - [x]    vision         -- <vision>
+    - [x]    fog            -- <start end red green blue transition>
 
 **BOT FUNCTIONS**
 
-    - [x]    spawn          -- DONE
-    - [x]    move           -- DONE
-    - [x]    aim            -- DONE
-    - [x]    stare          -- DONE
-    - [x]    model          -- DONE ( This function is a bit buggy with kill function. )
-    - [x]    kill           -- DONE
-    - [x]    holdgun        -- DONE
-    - [x]    freeze         -- DONE ( No need, bots don't have AI in T4. )
+    - [x]    spawn          -- <weapon_mp> <axis/allies>
+    - [x]    move           -- <bot_name>
+    - [x]    aim            -- <bot_name>
+    - [x]    stare          -- <bot_name>
+    - [x]    model          -- <bot_name> <MODEL> <axis/allies>
+    - [x]    kill           -- <bot_name> <body/head/cash>
+    - [x]    holdgun        -- <set to 1>
+    - [x]    freeze         -- <set to 1>
 
 <br/><br/>
 **PLANNED FEATURES**

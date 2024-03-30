@@ -6,9 +6,9 @@
 init()
 {
     scripts\defaults::load_defaults();
-    precache::common_precache();
-    precache::custom_precache();
-    precache::fx_precache();
+    scripts\precache::common_precache();
+    scripts\precache::custom_precache();
+    scripts\precache::fx_precache();
 
     level thread waitForHost();
 }

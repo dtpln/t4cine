@@ -1,5 +1,5 @@
 /*
- *      T4Cine -- DONE
+ *      T4Cine
  *      Player-related functions
  */
 
