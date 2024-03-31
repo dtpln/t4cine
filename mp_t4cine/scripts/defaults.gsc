@@ -31,5 +31,5 @@ load_defaults()
     level.INGAME_MUSIC              = false;    // [true/false] - When false, disables music in game + leader sounds.
 
     //  Added features -4g
-    level.BOT_WARFARE               = false;    // [true/false] - When true, enables bot warfare. // BW DOESNT WORK ON STEAM, MAYBE IMPLEMENT ON PLUTONIUM? -4g
+    level.BOT_WARFARE               = false;    // [true/false] - When true, enables bot warfare. // Adding in the future.
 }

@@ -36,45 +36,6 @@ class_swap()
     }
 }
 
-//  As for as equipment goes, going from a lethal that doesn't depend --
-//  -- on scripts to one that does will not work. (e.g TK to Claymore)
-//  Not gonna bother because I highly doubt anybody does that anyway.
-
-//  Removed since T4 has a working give command, and doesn't have camos. -4g
-/*give( args )
-{
-    weapon  = args[0];
-    if ( isValidEquipment( weapon ) )
-    {
-        if ( isValidOffhand( weapon ) )
-        {
-            print( "Changing tactical to " + weapon );
-            self take_offhands_tac();
-            waitsec();
-            self setOffhandSecondaryClass( get_offhand_name( weapon ) );
-        }
-        else 
-        {
-            print( "Changing lethal to " + weapon );
-            self take_offhands_leth();
-            waitsec();
-            self SetOffhandPrimaryClass( get_offhand_name( weapon ) );
-        }
-        //self maps\mp\perks\_perks::givePerk( get_offhand_name( weapon ) );
-        self giveWeapon( weapon );
-    }
-    else if ( isValidWeapon( weapon ) )
-    {
-        self dropItem( self getCurrentWeapon() );
-        skipframe();
-
-        self giveWeapon( weapon );
-
-        self switchToWeapon( weapon );
-    }
-    else print( "wtf is a '" + weapon  + "'??");
-}*/
-
 clear_bodies()
 {
     for (i = 0; i < 15; i++)
@@ -147,7 +108,7 @@ toggle_freeze()
 {
     level.BOT_MOVE ^= 1;
     bots_tweaks();
-    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]No AI in T4. :(" );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]No AI in T4. :(" ); // Gonna implement this when I include Bot Warfare.
 }
 
 
@@ -159,7 +120,7 @@ spawn_model( args ) // Kinda useless, but decided to keep in. Spawn some trees o
     prop.angles = ( 0, self.angles[1], 0);
     prop setModel( model );
 
-    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Spawned model " + model );
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Spawned model : " + model );
 }
 
 spawn_fx( args )
@@ -167,6 +128,8 @@ spawn_fx( args )
     fx = args[0];
     level._effect[fx] = loadfx( fx );
     playFX( level._effect[fx], at_crosshair( self ) );
+
+    self iPrintLn( "[" + level.HIGHLIGHT_COLOR + "T4Cine^7]Spawned fx : " + fx );
 }
 
 // Fog and Vision
@@ -193,6 +156,7 @@ change_fog( args )
 
 reset_fog()
 {
+    waitframe();
     setExpFog(0, 0, 0, 0, 0, 0);
 }
 
@@ -215,7 +179,7 @@ about()
         waitframe();
 
     wait 0.55;
-
+    setDvar( "ui_hud_hardcore", 1 );
     VisionSetNaked( "mpintro", 0.4 );
 
     text = [];
@@ -230,7 +194,7 @@ about()
         text[i] destroy();
     self switchToWeapon( lastWeapon );
     VisionSetNaked( getDvar( "mapname" ), 0.5 );
-
+    setDvar( "ui_hud_hardcore", !level.VISUAL_HUD );
     waitsec();
     self takeWeapon( "briefcase_bomb_defuse_mp" );
     

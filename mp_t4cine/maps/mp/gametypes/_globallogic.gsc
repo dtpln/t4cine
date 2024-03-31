@@ -606,7 +606,7 @@ matchStartTimer()
 	
 	matchStartTimer maps\mp\gametypes\_hud::fontPulseInit();
 
-	countTime = int( level.prematchPeriod );
+	countTime = int( 0 );
 	
 	if ( countTime >= 2 )
 	{
@@ -3371,8 +3371,8 @@ waitForPlayers()
 
 prematchPeriod()
 {
-	makeDvarServerInfo( "ui_hud_hardcore", level.VISUAL_HUD );
-	setDvar( "ui_hud_hardcore", level.VISUAL_HUD );
+	makeDvarServerInfo( "ui_hud_hardcore", !level.VISUAL_HUD );
+	setDvar( "ui_hud_hardcore", !level.VISUAL_HUD );
 	level endon( "game_ended" );
 	
 	if ( level.prematchPeriod > 0 )
@@ -3407,7 +3407,7 @@ prematchPeriod()
 	if ( game["state"] != "playing" )
 		return;
 
-	setDvar( "ui_hud_hardcore", level.VISUAL_HUD );
+	setDvar( "ui_hud_hardcore", !level.VISUAL_HUD );
 }
 
 

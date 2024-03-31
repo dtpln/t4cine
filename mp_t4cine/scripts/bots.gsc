@@ -42,7 +42,7 @@ spawnme( owner, weapon, team, model )
 
     skipframe();
 
-    self notify("menuresponse","changeclass",model);
+    self notify("menuresponse","changeclass" ,model + "_mp" );
 
     loadout = create_loadout( weapon );
     self thread create_spawn_thread( scripts\bots::give_loadout_on_spawn, loadout );
@@ -164,7 +164,10 @@ kill( args )
             fx          = parameters[0];
             tag         = player getTagOrigin( parameters[1] );
             hitloc      = parameters[2];
-
+            if( mode == "fire" ) {
+            player thread [[level.callbackPlayerDamage]]( player, player, player.health, 8, "MOD_BURNED", self getCurrentWeapon(), tag, tag, hitloc, 0 );
+            }
+            else
             player thread [[level.callbackPlayerDamage]]( player, player, player.health, 8, "MOD_SUICIDE", self getCurrentWeapon(), tag, tag, hitloc, 0 );
             
         }
@@ -201,7 +204,8 @@ create_kill_params()
     level.killparams             = [];
     level.killparams["body"]     = "flesh_body:j_spine4:body";
     level.killparams["head"]     = "flesh_head:j_head:head";
-    level.killparams["shotgun"]  = "flesh_body:j_knee_ri:body"; // REDO ME!!
+    level.killparams["shotgun"]  = "flesh_body:j_knee_ri:body";
+    level.killparams["fire"]     = "fire:j_spine4:body";
 }
 
 give_loadout_on_spawn( loadout )
