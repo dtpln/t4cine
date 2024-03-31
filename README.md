@@ -4,7 +4,7 @@
 
 ### 🎥 A features-rich cinematic mod for Call of Duty: World at War
 
-<img src="https://img.shields.io/badge/WORK%20IN%20PROGRESS-f68d3d?style=flat-square">　<a href="https://github.com/datapIan/t4cine/releases"><img src="https://img.shields.io/github/v/release/datapIan/t4cine?label=Latest%20release&style=flat-square&color=f68d3d"></a>　<a href="https://discord.gg/wgRJDJJ"><img src="https://img.shields.io/discord/617736623412740146?label=Join%20the%20IW4Cine%20Discord!&style=flat-square&color=f68d3d"></a>　<img src="https://img.shields.io/github/downloads/dtpln/t4cine/total?color=f68d3d&label=Downloads&style=flat-square">　<a href="https://github.com/dtpln/t4cine/releases">
+<img src="https://img.shields.io/badge/WORK%20IN%20PROGRESS-f68d3d?style=flat-square">　<a href="https://github.com/datapIan/t4cine/releases"><img src="https://img.shields.io/github/v/release/dtpln/t4cine?label=Latest%20release&style=flat-square&color=f68d3d"></a>　<a href="https://discord.gg/wgRJDJJ"><img src="https://img.shields.io/discord/617736623412740146?label=Join%20the%20IW4Cine%20Discord!&style=flat-square&color=f68d3d"></a>　<img src="https://img.shields.io/github/downloads/dtpln/t4cine/total?color=f68d3d&label=Downloads&style=flat-square">　<a href="https://github.com/dtpln/t4cine/releases">
 <br/><br/>
 
 **PLEASE NOTE**: As the original mod is in a WIP phase, so will this port be..
