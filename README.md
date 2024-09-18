@@ -1,14 +1,11 @@
-<img src="AWAITING HEADER IMAGE...">
-
-# *T4Cine*
-
-### 🎥 A features-rich cinematic mod for Call of Duty: World at War
+<div align="center"> 
+    
+[![T4Cine](https://raw.githubusercontent.com/dtpln/codcine/main/assets/img/t4cine_new.png 'T4Cine')](https://github.com/dtpln/t4cine)
+### A features-rich cinematic mod for Call of Duty: World at War
 
 <img src="https://img.shields.io/badge/WORK%20IN%20PROGRESS-f68d3d?style=flat-square">　<a href="https://github.com/dtpln/t4cine/releases/latest"><a href="https://github.com/dtpln/t4cine/releases/latest"><img src="https://img.shields.io/github/v/release/dtpln/t4cine?label=Latest%20release&style=flat-square&color=f68d3d"></a>　<a href="https://discord.gg/wgRJDJJ"><img src="https://img.shields.io/discord/617736623412740146?label=Join%20the%20IW4Cine%20Discord!&style=flat-square&color=f68d3d"></a>　<a href="https://github.com/dtpln/t4cine/releases/latest"><img src="https://img.shields.io/github/downloads/dtpln/t4cine/total?color=f68d3d&label=Downloads&style=flat-square">
-
+</div>
 <br/><br/>
-
-**PLEASE NOTE**: As the original mod is in a WIP phase, so will this port be..
 
 This is a port of [Sass' Cinematic Mod](https://github.com/sortileges/iw4cine) for **Call of Duty: World at War**, designed for video editors to create cinematics shots in-game.
 
