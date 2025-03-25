@@ -6,7 +6,7 @@
     - [x]     drop          -- <set to 1>
     - [x]     about         -- <set to 1>
     - [x]     clearbodies   -- <set to 1>
-    - [x]     viewhands     -- <model_name>
+    - [x]     viewhands     -- <set to 1>
     - [x]     eb_explosive  -- <radius>
     - [x]     eb_magic      -- <degrees>
 
@@ -19,11 +19,12 @@
 
 **BOT FUNCTIONS**
 
-    - [x]    spawn          -- <weapon_mp> <axis/allies> <assault/specops/heavygunner/demolitions/sniper>
+    - [x]    spawn          -- <weapon_mp> <axis/allies> <camo>
+    - [x]    weapon         -- <bot_name> <weapon_mp> <camo>
     - [x]    move           -- <bot_name>
     - [x]    aim            -- <bot_name>
     - [x]    stare          -- <bot_name>
-    - [x]    model          -- <bot_name> <ASSAULT/SPECOPS/HEAVYGUNNER/DEMOLITIONS/SNIPER> <axis/allies>
+    - [x]    model          -- <bot_name> <assault/smg/shotgun/lmg/sniper/flamethrower> <axis/allies>
     - [x]    kill           -- <bot_name> <body/head/fire>
     - [x]    holdgun        -- <set to 1>
     - [x]    freeze         -- <set to 1>

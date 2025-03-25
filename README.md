@@ -75,11 +75,12 @@ The link below contains a HTML file that explains every command from the [latest
 
 **BOT FUNCTIONS**
 
-    - [x]    spawn          -- <weapon_mp> <axis/allies> <assault/specops/heavygunner/demolitions/sniper>
+    - [x]    spawn          -- <weapon_mp> <axis/allies> <camo>
+    - [x]    weapon         -- <bot_name> <weapon_mp> <camo>
     - [x]    move           -- <bot_name>
     - [x]    aim            -- <bot_name>
     - [x]    stare          -- <bot_name>
-    - [x]    model          -- <bot_name> <ASSAULT/SPECOPS/HEAVYGUNNER/DEMOLITIONS/SNIPER> <axis/allies>
+    - [x]    model          -- <bot_name> <assault/smg/shotgun/lmg/sniper/flamethrower> <axis/allies>
     - [x]    kill           -- <bot_name> <body/head/fire>
     - [x]    holdgun        -- <set to 1>
     - [x]    freeze         -- <set to 1>
@@ -87,6 +88,7 @@ The link below contains a HTML file that explains every command from the [latest
 **PLANNED FEATURES**
 
     - [ ]    Implementation of Bot Warfare mod for T4 Plutonium.
+
 <br/><br/>
 ## Credits
 - **Sass** - Created the original IW4Cine mod. All the code was written by him, I just edited it to work on WAW.
